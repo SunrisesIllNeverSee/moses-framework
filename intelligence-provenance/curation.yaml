@@ -1,0 +1,72 @@
+# Intelligence Provenance — Curation
+# Curation is an editorial act, distinct from transformation and initiation.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1"
+governance: "Provisional — HYPOTHESIS."
+
+curation:
+  definition: "The act of selecting, organizing, filtering, or prioritizing signal content without changing the content itself."
+  status: DEFINED
+  note: |
+    Curation is an EDITORIAL act, distinct from:
+    - transformation (which CHANGES content)
+    - initiation (which STARTS an event)
+    - authorization (which GRANTS PERMISSION)
+    Curation shapes what is seen, not what is said.
+
+  # === Curation Relation ===
+  relation:
+    curated_by:
+      domain: signal
+      range: operator
+      meaning: "An operator selected, organized, or filtered the signal content."
+      status: HYPOTHESIS
+
+  # === Curation vs. Transformation ===
+  vs_transformation: |
+    Transformation changes the signal's content (and potentially its commitment
+    kernel). Curation changes the signal's presentation, selection, or ordering
+    without changing the content itself.
+
+    Example: A human editor who rewrites a paragraph is transforming. A human
+    editor who selects which paragraphs to include is curating. The distinction
+    matters for provenance: transformation may affect C(S); curation does not
+    (the commitment kernel of each selected element is unchanged).
+
+  # === Curation in the Provenance Graph ===
+  in_provenance: |
+    Curation records appear as curated_by edges in the provenance graph. They
+    capture the editorial decisions that shaped what content was included,
+    excluded, or prioritized — without altering the content itself.
+
+    This is important for Intelligence Provenance because curation is an
+    intelligence-bearing act. The curator's intelligence determines what is
+    seen, which affects downstream transformations and commitments.
+
+  # === Curation and Authority ===
+  curation_and_authority: |
+    Curation and authority are related but distinct:
+    - A curator selects content (editorial act).
+    - An authorizer permits a transformation (governance act).
+    A curator may or may not have authority. An authorizer may or may not
+    curate. The two roles can be filled by the same or different operators.
+
+  # === Curation and Commitment ===
+  curation_and_commitment: |
+    Curation does not change C(S) of individual signals. But curation affects
+    the COMMITMENT SET of a composite artifact. If a curator selects signals
+    that collectively create an obligation (e.g., selecting only the "shall"
+    clauses and omitting the "unless" exceptions), the composite commitment
+    may differ from the sum of individual commitments.
+
+    This is a known risk: curation can create commitment distortion without
+    transforming any individual signal. The provenance graph must record
+    curation acts so that commitment distortion through curation is traceable.
+
+  # === Open Questions ===
+  open_questions:
+    - "How is commitment distortion through curation measured?"
+    - "Does curation require governance (like transformation), or is it unregulated?"
+    - "Can AAI operators curate, or only BI operators?"
+    - "How does curation interact with the six-gate protocol?"

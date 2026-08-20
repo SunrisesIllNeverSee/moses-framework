@@ -1,0 +1,88 @@
+# Intellectual Provenance — Publications
+# DOI-backed and venue-backed publication records.
+version: "0.1.0"
+last_updated: "2026-08-20"
+governance: "Append-only. Each entry must have a DOI or stable URL."
+
+publications:
+  - id: PUB-001
+    title: "A Conservation Law for Commitment in Language Under Transformative Compression and Recursive Application"
+    author: "McHenry, Deric J."
+    year: 2026
+    doi: "10.5281/zenodo.20029607"
+    venue: "Zenodo"
+    type: paper
+    status: published
+    license: "CC BY 4.0"
+    notes: "Primary paper. Conservation law, experiments, falsification protocol, MO§ES™ public-layer architecture."
+
+  - id: PUB-002
+    title: "Experimental Record (EXP-001 through EXP-007)"
+    author: "McHenry, Deric J."
+    year: 2026
+    doi: "10.5281/zenodo.19105225"
+    venue: "Zenodo"
+    type: dataset
+    status: published
+    license: "CC BY 4.0"
+    notes: "3,950 runs, 57 signals, 181 condition-signal configurations. Nine failure modes."
+
+  - id: PUB-003
+    title: "Transformation Harness"
+    author: "McHenry, Deric J."
+    year: 2026
+    doi: "10.5281/zenodo.19109397"
+    venue: "Zenodo / Hugging Face"
+    type: software
+    status: published
+    license: "Open (harness is proxy measurement tool, not production enforcement)"
+    url: "https://huggingface.co/burnmydays/commitment_conservation_harness"
+    notes: "Public falsification harness. First disclosed January 12, 2026."
+
+  - id: PUB-004
+    title: "Propositions of Commitment Theory: A Research Prospectus (P-000)"
+    author: "McHenry, Deric J."
+    year: 2026
+    doi: "10.5281/zenodo.20031715"
+    venue: "Zenodo"
+    type: prospectus
+    status: published
+    license: "CC BY 4.0"
+    notes: "Generalization from law to theory. Definitions, propositions, axioms, disambiguation, nine novel concepts, research program."
+
+  - id: PUB-005
+    title: "Concept DOI for the MO§ES™ Framework"
+    author: "McHenry, Deric J."
+    year: 2026
+    doi: "10.5281/zenodo.18267278"
+    venue: "Zenodo"
+    type: concept
+    status: published
+    notes: "Framework-level concept registration."
+
+  - id: PUB-006
+    title: "Conservation of Commitment in Language Under Transformative Compression: A Semantic Extension of Shannon Information Theory"
+    author: "McHenry, Deric J."
+    year: 2026
+    venue: "clawRxiv"
+    url: "https://www.clawrxiv.io/abs/2604.00832"
+    type: preprint
+    status: published
+    notes: "Public preprint with Shannon extension framing."
+
+  - id: PUB-007
+    title: "CIVITAE Ontology — The Ten Nouns That Govern Everything"
+    author: "McHenry, Deric J."
+    year: 2026
+    venue: "signomy.xyz (agent-universe)"
+    type: ontology
+    status: published
+    notes: "Established AAI/BI intelligence classification. March 20, 2026."
+
+  - id: PUB-PENDING-001
+    title: "Canonical Ontology v0.1 (this repository)"
+    author: "McHenry, Deric J."
+    year: 2026
+    type: ontology
+    status: in_preparation
+    notes: "This repository. DOI to be assigned upon deposit."

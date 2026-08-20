@@ -1,0 +1,262 @@
+# Canonical Ontology v0.1 — Formal Definitions
+# Cross-referenced to Commitment Theory P-000 and Conservation Law paper.
+# Definitions are separated from propositions and empirical laws.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "P-000 (10.5281/zenodo.20031715); v05 paper (10.5281/zenodo.20029607)"
+governance: "Owner must freeze. Definition changes require major version bump."
+
+# ============================================================================
+# DEFINITIONS vs PROPOSITIONS vs LAWS
+# ============================================================================
+# DEFINED: true by construction (this is what we mean by the term)
+# DERIVED: follows logically from definitions
+# OBSERVED: empirical result
+# SUPPORTED: replicated evidence
+# HYPOTHESIS: testable but unestablished
+# SPECULATIVE: not yet formalized
+# EXTERNAL: borrowed from prior literature
+#
+# This file contains ONLY definitions (DEFINED) and derivations (DERIVED).
+# Empirical claims live in /commitment-theory/laws.yaml.
+# Provisional claims live in /claims/claims-registry.yaml.
+# ============================================================================
+
+definitions:
+
+  # === Signal and Transformation ===
+
+  DEF-001:
+    term: signal
+    symbol: "S"
+    statement: "A signal is a structured sequence of symbols drawn from an alphabet, carrying information and capable of bearing deontic content."
+    status: DEFINED
+    source: "P-000 Proposition 1.1"
+    doi: "10.5281/zenodo.20031715"
+    note: "Includes natural language text, code, structured data, multimodal representations."
+
+  DEF-002:
+    term: transformation
+    symbol: "T: S → S"
+    statement: "A transformation is a function that maps a signal to a modified signal. May be lossy or lossless; performed by humans, algorithms, or hybrid systems."
+    status: DEFINED
+    source: "P-000 Proposition 1.2"
+    doi: "10.5281/zenodo.20031715"
+
+  DEF-003:
+    term: governed transformation
+    symbol: "T_gov"
+    statement: "A transformation that passes through constitutional constraints designed to preserve the commitment kernel."
+    status: DEFINED
+    source: "P-000 Proposition 1.4"
+    doi: "10.5281/zenodo.20031715"
+    note: "Novel term — zero-collision verified April 15, 2026. NOT supervised learning, NOT regulated AI, NOT human oversight, NOT Constitutional AI."
+
+  DEF-004:
+    term: ungoverned transformation
+    symbol: "T"
+    statement: "A transformation that lacks constitutional constraints. Subject to semantic entropy and commitment decay."
+    status: DEFINED
+    source: "P-000 Proposition 1.5"
+    doi: "10.5281/zenodo.20031715"
+    note: "Novel term — zero-collision verified April 15, 2026."
+
+  # === Commitment ===
+
+  DEF-005:
+    term: commitment
+    symbol: "C(S)"
+    statement: "The commitment kernel of a signal S is the minimal identity-preserving deontic invariant of the signal — the set of obligations, prohibitions, permissions, and modal constraints that must survive transformation for the signal to be considered semantically continuous with its source."
+    status: DEFINED
+    source: "P-000 Proposition 1.3; v05 paper Definition 2.4"
+    doi: "10.5281/zenodo.20031715"
+    note: |
+      Property of SIGNALS, not agents. Operationally defined and measurable via
+      independent oracles. NOT a summary, NOT a paraphrase, NOT an embedding,
+      NOT speaker belief, NOT a semantic similarity score.
+      The choice of extractor is empirical; the definition is what the extractor targets.
+
+  DEF-006:
+    term: fidelity
+    statement: "The fidelity of a transformation is the degree to which the commitment kernel of the output matches the commitment kernel of the input, as measured by an independent oracle."
+    status: DEFINED
+    source: "P-000 Proposition 1.6"
+    doi: "10.5281/zenodo.20031715"
+    note: "Operationalized via bidirectional entailment or equivalent semantic verification."
+
+  DEF-007:
+    term: lineage
+    statement: "Ordered transformation history linking a signal to its source."
+    status: DEFINED
+    source: "v05 paper Definition 2.9"
+    doi: "10.5281/zenodo.20029607"
+
+  # === Signal and Transformation Classes ===
+
+  DEF-008:
+    term: deontic signal
+    statement: "A signal whose primary content is obligations, prohibitions, permissions, or modal constraints."
+    status: DEFINED
+    source: "P-000 Proposition 1.7"
+    note: "CT's empirical support is strongest for deontic signals."
+
+  DEF-009:
+    term: descriptive signal
+    statement: "A signal whose primary content is states of affairs."
+    status: DEFINED
+    source: "P-000 Proposition 1.7"
+
+  DEF-010:
+    term: narrative signal
+    statement: "A signal whose primary content is temporal sequences."
+    status: DEFINED
+    source: "P-000 Proposition 1.7"
+
+  DEF-011:
+    term: self-referential signal
+    statement: "A signal whose content refers to its own transformation or commitment status."
+    status: DEFINED
+    source: "P-000 Proposition 1.7"
+
+  # === Governance ===
+
+  DEF-012:
+    term: authority
+    statement: "The right to enforce a transformation, granted by a governance process."
+    status: DEFINED
+    note: "Authority is a governance property, NOT an intelligence property."
+
+  DEF-013:
+    term: vault artifact
+    statement: "A signal that passes all six gates of the governance protocol, carrying a cryptographic lineage hash, a Fidelity Seal attesting to commitment conservation, and a custody anchor."
+    status: DEFINED
+    source: "P-000 Proposition 7.3"
+    doi: "10.5281/zenodo.20031715"
+
+  DEF-014:
+    term: fidelity seal
+    statement: "A cryptographic attestation that a signal's commitment kernel was conserved under governed transformation."
+    status: DEFINED
+    source: "P-000 Proposition 7.3"
+    doi: "10.5281/zenodo.20031715"
+
+  # === Intelligence (provisional) ===
+
+  DEF-015:
+    term: intelligence
+    symbol: "I"
+    statement: "The superclass of intelligence types. Operationally defined via observable intelligence-bearing events, not via a metaphysical definition."
+    status: DEFINED
+    note: |
+      Provisional operational definition. The framework does NOT claim to solve
+      what intelligence "is." It defines intelligence as what intelligence-bearing
+      events exhibit. Dimensions: form, substrate, genesis, initiation, dependency,
+      provenance, authority.
+    subtypes: [BI, AAI, SI]
+
+  DEF-016:
+    term: intelligence-bearing event
+    statement: "An observable event in which an operator initiates, transforms, or contributes to a commitment-bearing signal."
+    status: DEFINED
+    note: "The operational unit for Intelligence Provenance. Replaces 'intelligence' as the traced object."
+
+  DEF-017:
+    term: biological intelligence
+    symbol: "BI"
+    statement: "Intelligence-bearing events initiated endogenously by a biological system."
+    status: DEFINED
+    note: |
+      Operational proxy: events with no detectable external triggering stimulus.
+      Existing priority: CIVITAE ontology (March 20, 2026) classifies agents as
+      BI (human-side, operating directly).
+      Known limitation: endogenous initiation vs. stimulus-response is an
+      unresolved problem in neuroscience.
+
+  DEF-018:
+    term: assisted intelligence
+    symbol: "AAI"
+    statement: "Intelligence-bearing events requiring an originating external condition to initiate."
+    status: DEFINED
+    note: |
+      Operational proxy: events that do not occur without a detectable external
+      triggering stimulus.
+      Existing priority: CIVITAE ontology (March 20, 2026) classifies agents as
+      AAI (silicon-side, powered by a System).
+      CRITICAL DISAMBIGUATION: AAI here means intelligence REQUIRING external
+      initiation, NOT intelligence that assists humans. External uses (FedTech,
+      AMA, Forbes/Cognilytica, PwC) all mean "AI that assists humans" — different
+      concept. Disambiguation paragraph required in every public document.
+
+  DEF-019:
+    term: system intelligence
+    symbol: "SI"
+    statement: "A property of a system containing BI and AAI operators, observable when the system's behavior cannot be attributed to any single operator."
+    status: DEFINED
+    note: |
+      v0.1 treatment: SI is a SYSTEM PROPERTY, NOT a participant class.
+      This is the most parsimonious position. May be upgraded to participant
+      class in a future version IF AND ONLY IF operational criteria for
+      SI-as-participant are developed and tested.
+      Disambiguation: distinct from Hämäläinen & Saarinen "Systems Intelligence"
+      (human cognitive capacity in complex systems) and ACM SIGOPS "System
+      Intelligence" (AI capabilities for system design).
+
+  DEF-020:
+    term: initiation
+    statement: "The event that brings an intelligence-bearing event into existence. Distinct from causation, prompting, control, and dependency."
+    status: DEFINED
+    note: |
+      Initiation is a point event (temporal), not a structural relationship.
+      See /intelligence/initiation.yaml for the full distinction analysis.
+      This is the taxonomic criterion distinguishing BI from AAI.
+
+  # === Provenance ===
+
+  DEF-021:
+    term: intelligence provenance
+    symbol: "P_I(x)"
+    statement: "The provenance graph of intelligence contributing to a state, event, or output x. Traces origin, initiation, transformation, contribution, curation, authority, commitment, persistence, and downstream lineage of intelligence through biological, assisted, and systemic forms."
+    status: DEFINED
+    note: |
+      Must be distinguished from: data provenance (W3C PROV), content provenance
+      (C2PA), semantic provenance, reasoning provenance, decision provenance,
+      authorship, and model attribution.
+      The distinguishing claim: IP traces intelligence-bearing events as
+      first-class entities, not as annotations on data artifacts.
+      Whether this is sufficient distinction from W3C PROV is an open question
+      (see claims registry IP-002).
+
+  DEF-022:
+    term: micro eval
+    symbol: "E_μ"
+    statement: "A measurement unit recording an intelligence/system interaction: initiating operator, initial state, transformation, resulting operator, resulting state, commitment, provenance, and outcome."
+    status: DEFINED
+    note: |
+      E_μ = (I_a, S_t, T, I_b, S_{t+1}, C, P, O)
+      Every component MUST map to an ontology entity. If a component does not
+      map, either the ontology is incomplete or the Micro Eval is over-specified.
+      See /measurement/micro-eval.yaml for the full specification.
+
+# ============================================================================
+# CIRCULARITY RISK REGISTER
+# ============================================================================
+# Definitions that risk circularity and how the risk is mitigated.
+# ============================================================================
+
+circularity_risks:
+  - risk: "Commitment = 'minimal identity-preserving content' + identity-preserving = 'preserves commitment'"
+    assessment: "REAL but acknowledged in v05 paper Section 3.4"
+    mitigation: "Parameterized by equivalence oracle. Critics may substitute their own oracle. If conservation fails under a critic's oracle, the law is falsified."
+    status: ACKNOWLEDGED
+
+  - risk: "AAI = 'requires external initiation' + Initiation = 'what AAI requires'"
+    assessment: "AVOIDABLE"
+    mitigation: "Initiation is defined independently (DEF-020) as a point event, not in terms of AAI."
+
+  - risk: "SI = 'emerges from BI × AAI' + BI × AAI = 'what produces SI'"
+    assessment: "AVOIDABLE"
+    mitigation: "The × operation must be defined independently of SI. Currently undefined — thesis is SPECULATIVE until × is specified."
+
+  - risk: "Intelligence Provenance = 'traces intelligence' + Intelligence = 'what provenance traces'"
+    assessment: "AVOIDABLE"
+    mitigation: "Intelligence is defined operationally via observable events (DEF-015/DEF-016), not as 'what provenance traces.'"

@@ -1,0 +1,209 @@
+# Canonical Ontology v0.1 — Relations
+# Provenance and commitment relations. Relations marked DEFINED are from existing
+# CT; HYPOTHESIS relations are new proposals for the intelligence extension.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Derived from P-000 (10.5281/zenodo.20031715) and ontology review v0.1"
+governance: "Owner must freeze before adding further relations."
+
+# ============================================================================
+# RELATION VOCABULARY
+# ============================================================================
+# Every relation has: domain, range, meaning, status, source.
+# Provenance assertions carry metadata: confidence, source, verification_status, timestamp.
+# ============================================================================
+
+relations:
+
+  # === Existing Commitment Theory relations (DEFINED) ===
+
+  conserved_under:
+    id: mos:conserved_under
+    domain: commitment
+    range: transformation
+    meaning: "C(S) = C(T_gov(S)) for governed T"
+    status: DEFINED
+    source: "10.5281/zenodo.20029607"
+
+  degraded_under:
+    id: mos:degraded_under
+    domain: commitment
+    range: transformation
+    meaning: "C(T(S)) < C(S) for ungoverned T"
+    status: DEFINED
+    source: "10.5281/zenodo.20029607"
+
+  transformed_by:
+    id: mos:transformed_by
+    domain: signal
+    range: transformation
+    status: DEFINED
+    source: "10.5281/zenodo.20029607"
+
+  derived_from:
+    id: mos:derived_from
+    domain: signal
+    range: signal
+    meaning: "A signal is derived from another signal through transformation."
+    status: DEFINED
+    source: "10.5281/zenodo.20029607"
+
+  extracted_by:
+    id: mos:extracted_by
+    domain: commitment
+    range: extractor
+    meaning: "Records which commitment extractor was used to compute C(S)."
+    status: DEFINED
+    note: "Critical for reproducibility. Different extractors produce different commitment objects."
+
+  measured_by:
+    id: mos:measured_by
+    domain: observation
+    range: oracle
+    meaning: "Records which oracle/instrument produced an observation."
+    status: DEFINED
+
+  verified_by:
+    id: mos:verified_by
+    domain: observation
+    range: oracle
+    meaning: "An independent oracle confirmed the observation."
+    status: DEFINED
+
+  # === Intelligence Provenance relations (HYPOTHESIS — new) ===
+
+  originated_by:
+    id: mos:originated_by
+    domain: commitment_event
+    range: operator
+    meaning: "The source of intelligence content for an event. The operator from which the intelligence-bearing content originated."
+    status: HYPOTHESIS
+    note: "Distinct from initiated_by (trigger of event). Origin concerns content source; initiation concerns event trigger."
+
+  initiated_by:
+    id: mos:initiated_by
+    domain: commitment_event
+    range: operator
+    meaning: "The trigger of an intelligence-bearing event — the operator whose action brought the event into existence."
+    status: HYPOTHESIS
+    note: |
+      Must be distinguished from:
+      - caused_by (causation is broader — a cause can sustain, enable, or prevent)
+      - prompted_by (prompting is a subset of initiation)
+      - controlled_by (control implies ongoing influence, initiation is a point event)
+      - dependent_on (dependency is structural, initiation is temporal)
+      See /intelligence/initiation.yaml for the full distinction analysis.
+
+  received_from:
+    id: mos:received_from
+    domain: operator
+    range: operator
+    meaning: "An operator received a signal or intelligence content from another operator."
+    status: HYPOTHESIS
+
+  curated_by:
+    id: mos:curated_by
+    domain: signal
+    range: operator
+    meaning: "An operator selected, organized, or filtered the signal content."
+    status: HYPOTHESIS
+    note: "Curation is an editorial act, distinct from transformation (which changes content) and initiation (which starts an event)."
+
+  redirected_by:
+    id: mos:redirected_by
+    domain: commitment_event
+    range: operator
+    meaning: "An operator changed the target, scope, or direction of an intelligence-bearing event."
+    status: HYPOTHESIS
+
+  authorized_by:
+    id: mos:authorized_by
+    domain: transformation
+    range: operator
+    meaning: "An operator with authority granted permission for the transformation."
+    status: HYPOTHESIS
+    note: "Authority is a governance property, NOT an intelligence property. The operator has authority; the intelligence does not."
+
+  committed_by:
+    id: mos:committed_by
+    domain: commitment
+    range: operator
+    meaning: "The operator that produced the commitment-bearing signal."
+    status: HYPOTHESIS
+    note: "About who/what produced the commitment-bearing signal, NOT about the commitment itself (which is signal-side, not agent-side). This is the provenance attribution, not the ontological location of commitment."
+
+  # === Proposed additional relations (HYPOTHESIS — identified as missing) ===
+
+  contested_by:
+    id: mos:contested_by
+    domain: provenance_assertion
+    range: operator
+    meaning: "An operator disputes a provenance claim."
+    status: HYPOTHESIS
+    note: "Represents disagreement about a provenance claim. Provenance edges are assertions, not facts."
+
+  failed_by:
+    id: mos:failed_by
+    domain: signal
+    range: transformation
+    meaning: "A transformation that violated commitment conservation."
+    status: HYPOTHESIS
+    note: "Distinct from transformed_by. Indicates conservation failure, not just transformation occurrence."
+
+  degraded_by:
+    id: mos:degraded_by
+    domain: commitment
+    range: transformation
+    meaning: "Partial commitment loss — the drift case."
+    status: HYPOTHESIS
+    note: "Carries a drift measurement. Distinct from failed_by (complete failure) and degraded_under (general property)."
+
+  replaced_by:
+    id: mos:replaced_by
+    domain: commitment_event
+    range: commitment_event
+    meaning: "One intelligence-bearing event supersedes another."
+    status: HYPOTHESIS
+
+  inherited_by:
+    id: mos:inherited_by
+    domain: commitment_event
+    range: commitment_event
+    meaning: "Intelligence content inherited from a prior event."
+    status: HYPOTHESIS
+    note: "Distinct from derived_from (signal-to-signal). This is event-to-event inheritance."
+
+# ============================================================================
+# PROVENANCE ASSERTION METADATA
+# ============================================================================
+# All HYPOTHESIS relations (provenance assertions) carry this metadata.
+# A provenance edge is a CLAIM about what happened, not what happened.
+# The assertion/observation distinction must be maintained.
+# ============================================================================
+
+assertion_metadata:
+  confidence:
+    required: true
+    type: "probability or qualitative level (high/medium/low)"
+    description: "How confident the asserter is in the provenance claim."
+  source:
+    required: true
+    type: "operator or instrument identifier"
+    description: "Who or what asserted this provenance edge."
+  verification_status:
+    required: true
+    type: "enum"
+    values: [unverified, verified, disputed, refuted]
+    description: "Current verification state of the assertion."
+  timestamp:
+    required: true
+    type: "ISO 8601"
+    description: "When the assertion was made."
+  extractor_version:
+    required: false
+    type: "string"
+    description: "If the assertion depends on a commitment extraction, which extractor version was used."
+  oracle_version:
+    required: false
+    type: "string"
+    description: "If the assertion depends on an oracle verification, which oracle version was used."

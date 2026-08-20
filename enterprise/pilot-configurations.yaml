@@ -1,0 +1,102 @@
+# Enterprise — Pilot Configurations
+# Specific pilot deployment configurations for Indexed Programs.
+# These are commercial/experimental configurations, NOT canonical constructs.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1; existing enterprise build package"
+governance: "Downstream from canonical. Pilot configs can be modified by enterprise team."
+
+pilots:
+  description: |
+    Pilot configurations define specific deployments of Indexed Programs.
+    Each pilot has a scope, participant set, measurement plan, and success criteria.
+    Pilots are experiments — they test whether canonical constructs produce
+    useful measurements in real-world contexts.
+
+  # === Pilot Schema ===
+  schema:
+    fields:
+      - name: id
+        type: string
+      - name: program_id
+        type: string
+        description: "Which Indexed Program this pilot deploys"
+      - name: name
+        type: string
+      - name: scope
+        type: string
+        description: "What the pilot covers"
+      - name: participants
+        type: list
+        description: "BI and AAI operators in the pilot"
+      - name: measurement_plan
+        type: object
+        description: "What Micro Evals and benchmarks are collected"
+      - name: success_criteria
+        type: list
+        description: "What outcomes indicate pilot success"
+      - name: status
+        type: enum
+        values: [planned, active, completed, deferred, cancelled]
+      - name: start_date
+        type: date
+      - name: end_date
+        type: date
+
+  # === Pilots ===
+  entries:
+    - id: PILOT-001
+      program_id: PROG-001
+      name: "SigRank B2B Pilot — AI-Assisted Work Measurement"
+      scope: "Measure AI-assisted work quality across a B2B pilot using Micro Evals"
+      participants:
+        - type: BI
+          role: "Human operators producing and reviewing AI-assisted work"
+        - type: AAI
+          role: "LLM systems assisting with content generation"
+      measurement_plan:
+        micro_evals: "Collect E_μ for each work unit (initiating operator, transformation, commitment, provenance, outcome)"
+        benchmarks: "Operator baseline, performative benchmark, workflow diagnostic"
+        commitment_tracking: "C(S) before and after each transformation"
+        provenance_tracking: "Full P_I(x) graph for each work unit"
+      success_criteria:
+        - "Micro Evals can be collected without disrupting workflow"
+        - "Commitment conservation can be measured in production context"
+        - "Intelligence Provenance graph captures the BI/AAI interaction"
+        - "Operators find the measurements useful for evaluating work quality"
+      status: active
+      start_date: "2026-08"
+      end_date: "TBD"
+      note: "This pilot tests whether canonical constructs produce useful measurements in a real B2B context."
+
+    - id: PILOT-002
+      program_id: PROG-003
+      name: "Intelligence Provenance Pilot — AI Content Audit"
+      scope: "Test Intelligence Provenance tracking for AI-generated content audit"
+      participants:
+        - type: BI
+          role: "Human auditors reviewing AI-generated content"
+        - type: AAI
+          role: "LLM systems generating content"
+      measurement_plan:
+        provenance_graph: "Full P_I(x) for each content artifact"
+        commitment_checking: "C(S) at each provenance node"
+        comparison: "IP-based audit vs. standard model attribution audit"
+      success_criteria:
+        - "IP graph captures intelligence lineage that model attribution misses"
+        - "Commitment checking at provenance nodes identifies conservation failures"
+        - "IP-based audit provides more actionable information than standard audit"
+        - "IP-001 falsification condition is testable (IP predicts outcomes better than data provenance alone)"
+      status: planned
+      start_date: "TBD"
+      end_date: "TBD"
+      note: "This pilot tests IP-001 (Intelligence Provenance adds explanatory power). Depends on IP framework implementation."
+
+  # === Discipline ===
+  discipline: |
+    Pilot configurations are experiments that TEST canonical claims.
+    - A pilot's success criteria should map to falsification conditions in the claims registry.
+    - A pilot's measurements should use Micro Evals derived from the ontology.
+    - A pilot's results feed back into the claims registry (upgrading or downgrading claim states).
+    - Pilots do NOT create new ontology entities — they test existing ones.
+    - If a pilot reveals a missing ontology entity, the ontology must be updated FIRST.

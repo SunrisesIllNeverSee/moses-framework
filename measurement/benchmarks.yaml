@@ -1,0 +1,82 @@
+# Benchmarks — Derived Population Measurements
+# Benchmarks are derived projections from Micro Evals, not independent constructs.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1; user proposal (Layer 6)"
+governance: "Provisional — HYPOTHESIS."
+
+benchmarks:
+  description: |
+    Benchmarks are derived projections from Micro Evals. They aggregate Micro Eval
+    data to produce population-level measurements. They are NOT independent
+    constructs — they derive from the ontology through Micro Evals.
+
+  # === Benchmark Types ===
+  types:
+
+    operator_baseline:
+      name: "Operator Baseline"
+      description: "Aggregate Micro Evals for a single operator to establish baseline performance."
+      derivation: "Filter E_μ by I_a or I_b = operator_id. Aggregate O across transformations."
+      measures:
+        - "Conservation rate: fraction of governed transformations where C(S_t) = C(S_{t+1})"
+        - "Degradation rate: fraction of ungoverned transformations where C(S_t) > C(S_{t+1})"
+        - "Failure mode distribution: which of the nine failure modes occur most frequently"
+      status: HYPOTHESIS
+
+    performative_benchmark:
+      name: "Performative Benchmark"
+      description: "Compare Micro Eval outcomes across operators on the same transformation."
+      derivation: "Group E_μ by T. Compare O and C conservation across I_a/I_b."
+      measures:
+        - "Cross-operator conservation comparison"
+        - "Intelligence-type performance comparison (BI vs AAI vs hybrid)"
+        - "Governed vs ungoverned transformation comparison"
+      status: HYPOTHESIS
+
+    workflow_diagnostic:
+      name: "Workflow Diagnostic"
+      description: "Trace Micro Evals through a provenance chain to identify conservation failures."
+      derivation: "Follow P chain through linked E_μ. Check C conservation at each node."
+      measures:
+        - "Chain conservation: does C persist across the full provenance chain?"
+        - "Failure point identification: where in the chain does C degrade?"
+        - "Intelligence-type transition analysis: do BI→AAI or AAI→BI transitions affect C?"
+      status: HYPOTHESIS
+
+    team_topology:
+      name: "Team Topology"
+      description: "Map the BI/AAI/SI composition of a workflow from Micro Eval provenance."
+      derivation: "Aggregate I_a/I_b intelligence types across P chain for a workflow."
+      measures:
+        - "BI/AAI/SI ratio in the workflow"
+        - "Intelligence-type transition frequency"
+        - "Authority distribution across intelligence types"
+      status: HYPOTHESIS
+
+    organizational_intelligence:
+      name: "Organizational Intelligence"
+      description: "Aggregate Micro Evals across an organization to measure system-level intelligence."
+      derivation: "Aggregate all E_μ for an organization's workflows."
+      measures:
+        - "Organization-wide conservation rate"
+        - "Intelligence-type distribution across the organization"
+        - "Provenance graph density and connectivity"
+        - "SI emergence indicators: fraction of outcomes not attributable to single operators"
+      status: HYPOTHESIS
+      note: "This is where SI (System Intelligence) becomes measurable — as a property of the aggregate, not as a participant."
+
+  # === Relationship to Existing Harness ===
+  harness_relationship: |
+    The existing Commitment Conservation harness (DOI: 10.5281/zenodo.19109397)
+    measures commitment conservation at the signal-transformation level. Micro
+    Evals extend this to the intelligence-system interaction level by adding
+    operator identity, provenance, and outcome dimensions.
+
+    The harness is a proxy measurement tool. Micro Evals are also proxy
+    measurements — they measure observable events, not intelligence itself.
+
+  # === Falsification ===
+  falsification:
+    condition: "Micro Eval-derived benchmarks do not predict outcomes better than standard evaluation metrics (accuracy, F1, BLEU, etc.)"
+    status: "UNDEFINED — not yet tested"

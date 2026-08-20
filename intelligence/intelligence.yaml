@@ -1,0 +1,123 @@
+# Intelligence Ontology — Superclass and Dimensions
+# I = Intelligence (superclass)
+# I → {BI, AAI, SI}
+# Dimensions: I = (form, substrate, genesis, initiation, dependency, provenance, authority)
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1; CIVITAE ontology (signomy.xyz, March 20, 2026)"
+governance: "Provisional — all intelligence claims are HYPOTHESIS or SPECULATIVE. Owner must freeze before public disclosure."
+
+intelligence:
+  symbol: "I"
+  description: |
+    The superclass of intelligence types. Operationally defined via observable
+    intelligence-bearing events, NOT via a metaphysical definition of what
+    intelligence "is." The framework does not claim to solve the hard problem
+    of intelligence.
+  status: HYPOTHESIS
+  operational_definition: "Intelligence is what intelligence-bearing events exhibit."
+  note: |
+    This is deliberately operational, not metaphysical. The framework traces
+    intelligence-bearing events (observable) rather than intelligence itself
+    (metaphysical). This avoids inheriting all the unresolved problems of
+    defining intelligence.
+
+  # === Taxonomy ===
+  subtypes:
+    - id: BI
+      name: "Biological Intelligence"
+      file: "biological-intelligence.yaml"
+    - id: AAI
+      name: "Assisted Intelligence"
+      file: "assisted-intelligence.yaml"
+    - id: SI
+      name: "System Intelligence"
+      file: "system-intelligence.yaml"
+
+  # === Dimensions ===
+  # I = (form, substrate, genesis, initiation, dependency, provenance, authority)
+  # These dimensions keep BI × AAI → SI from becoming disconnected branding.
+  # They make the relational thesis part of the ontology.
+  dimensions:
+    form:
+      description: "The structural manifestation of the intelligence (e.g., linguistic, computational, neural, hybrid)."
+      values: [linguistic, computational, neural, hybrid]
+      status: HYPOTHESIS
+
+    substrate:
+      description: "The physical substrate on which the intelligence operates (e.g., biological neural tissue, silicon, hybrid)."
+      values: [biological, silicon, hybrid]
+      status: HYPOTHESIS
+
+    genesis:
+      description: "The origin process by which the intelligence came into being (e.g., evolutionary, engineered, emergent)."
+      values: [evolutionary, engineered, emergent]
+      status: HYPOTHESIS
+
+    initiation:
+      description: "How intelligent operations are initiated (endogenous, externally initiated, machine-initiated, system-initiated, recursive)."
+      values: [endogenous, externally_initiated, machine_initiated, system_initiated, recursive]
+      status: HYPOTHESIS
+      note: "This is the primary dimension distinguishing BI from AAI. See initiation.yaml."
+
+    dependency:
+      description: "Whether the intelligence requires an external condition to operate (initiation dependency)."
+      values: [independent, dependent, interdependent]
+      status: HYPOTHESIS
+      note: "AAI is defined through initiation dependency, not 'helps humans.'"
+
+    provenance:
+      description: "The traceable lineage of intelligence contributions."
+      values: [traceable, partial, unknown]
+      status: HYPOTHESIS
+      note: "Connects to Intelligence Provenance (see /intelligence-provenance/)."
+
+    authority:
+      description: "Whether the intelligence has authority to enforce transformations."
+      values: [authorized, unauthorized, contested]
+      status: HYPOTHESIS
+      note: "Authority is a governance property, NOT an intelligence property. This dimension records the governance status, not an intelligence capability."
+
+  # === Relational Thesis ===
+  relational_thesis:
+    statement: "BI × AAI → SI"
+    symbol: "BI × AAI → SI"
+    status: SPECULATIVE
+    operation_undefined: true
+    falsification_condition: null
+    note: |
+      The × operation is undefined. Candidates: composition, interaction,
+      causal production, emergence. The thesis cannot enter the claims registry
+      as anything stronger than SPECULATIVE until the operation is specified
+      and a falsification condition is defined.
+      Minimum requirement: define × operationally and specify what observation
+      would falsify the thesis.
+
+  # === Initiation Chain Model ===
+  # This allows modeling chains like:
+  # BI_1 → AAI_1 → AAI_2
+  # without pretending AAI_2 was "assisted by a human."
+  initiation_chain:
+    description: |
+      Intelligence operations can chain. A BI operator initiates an AAI operation,
+      which in turn initiates another AAI operation. The assistance concerns the
+      ORIGINATING CONDITION required to instantiate that intelligent operation,
+      not the entire chain.
+    example: "BI_1 → AAI_1 → AAI_2"
+    note: |
+      AAI_2 was not "assisted by a human" in the FedTech/AMA sense. AAI_2 was
+      initiated by AAI_1, which was initiated by BI_1. The originating condition
+      for AAI_2 is AAI_1's output, not direct human assistance.
+    status: HYPOTHESIS
+
+  # === Existing Priority ===
+  existing_priority:
+    source: "CIVITAE ontology (agent-universe/ONTOLOGY.md)"
+    date: "2026-03-20"
+    what_it_established: |
+      CIVITAE classifies agents as:
+      - AAI (AI Assisted Intelligence) — silicon-side, powered by a System
+      - BI (Biological Intelligence) — human-side, operating directly
+      This is the existing internal terminology. Any new taxonomy must preserve
+      this priority, not overwrite it.
+    note: "The intelligence ontology extends CIVITAE's AAI/BI with the initiation-dependency criterion and the SI system property."

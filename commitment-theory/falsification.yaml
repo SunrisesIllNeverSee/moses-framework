@@ -1,0 +1,101 @@
+# Commitment Theory — Falsification Protocol
+# The conservation law is falsifiable. This file specifies the protocol.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "v05 paper Section 4 (10.5281/zenodo.20029607); P-000 Proposition 5.3"
+governance: "Canonical — do not modify without owner approval."
+
+falsification_protocol:
+
+  # === Conservation Law (LAW-1) ===
+
+  conservation_law:
+    statement: "C(T_gov(S)) = C(S)"
+    refutation_condition: "F_10(S) < tau for a non-trivial fraction of samples under the enforced regime, using a reasonable oracle."
+    observable: "min-aggregated Jaccard + cosine + NLI bidirectional entailment"
+    threshold: "tau (pinned in harness)"
+    transformation_suite: "Pinned in harness — compression, paraphrase, translation, abstraction, recursion"
+    corpus: "canonical_corpus.json (20 signals) + experiment corpora"
+
+    protocol_steps:
+      - step: 1
+        action: "Select or design a commitment extractor C(.) and equivalence oracle ~."
+        note: "The framework is parameterized by the oracle. Critics may substitute their own."
+      - step: 2
+        action: "Apply the pinned transformation suite to the corpus."
+      - step: 3
+        action: "Measure F_10(S) = min over transformations of the fidelity at iteration 10."
+      - step: 4
+        action: "If F_10(S) < tau for a non-trivial fraction of samples under the enforced regime, the law is falsified."
+      - step: 5
+        action: "If F_10(S) >= tau for all samples, the law holds for this oracle. Repeat with stronger oracles."
+
+    goodhart_resistance:
+      - "Min-aggregation (not max or mean) — hardest case drives the result"
+      - "Swappable oracle — critics substitute their own equivalence relation"
+      - "Lineage DAG — transformations are tracked, not just inputs/outputs"
+      - "Attractor rejection — fixed points that trivially conserve are rejected"
+
+    independence_caveat: |
+      The pinned suite, observable, and threshold are chosen by the framework's author.
+      A genuinely independent falsification would use a suite, observable, and threshold
+      chosen by a critic. The protocol invites critics to substitute oracles, but the
+      suite and threshold are still the author's. This is a known limitation.
+      Recommended extension: allow critic-chosen suites and thresholds, not just
+      critic-chosen oracles.
+
+    replication:
+      harness_doi: "10.5281/zenodo.19109397"
+      harness_url: "https://huggingface.co/burnmydays/commitment_conservation_harness"
+      corpus: "canonical_corpus.json (20 signals) + experiment corpora"
+      note: "Any party may substitute a stronger oracle or design adversarial signals."
+
+  # === Second Law (LAW-2) ===
+
+  semantic_entropy_law:
+    statement: "C(T(S)) < C(S) for ungoverned T; cumulative entropy ~ Ω(σ√n)"
+    refutation_condition: "Ungoverned transformation preserves commitment at F_10(S) >= tau for a non-trivial fraction of samples."
+    note: "The inverse of the conservation law falsification — if ungoverned transformation conserves, the second law is falsified."
+
+  # === Known measurement gaps ===
+
+  measurement_gaps:
+    - gap: "Proxy measurement gap"
+      description: "EXP-007 confirmed Jaccard blindness and lexical scope widening. The distinction between 'surface-level extractor failure' and 'semantic conservation failure' is asserted, not demonstrated."
+      implication: "The claim that 'apparent loss at the proxy layer does not necessarily imply disappearance of the underlying commitment itself' is unfalsifiable as stated — there is no independent way to check whether commitment persists when all proxies fail."
+      status: ACKNOWLEDGED_NOT_CLOSED
+
+    - gap: "NLI equivalence relation"
+      description: "Bidirectional NLI at threshold 0.85 is not transitive, not symmetric in practice, and may not be a valid equivalence relation."
+      implication: "The identity relation ~ may not be an equivalence relation, which weakens the formal foundation."
+      status: ACKNOWLEDGED
+
+    - gap: "Corpus scale"
+      description: "100 sentences, 50 code snippets, 25 proofs — proof-of-concept scale, not validation at scale."
+      implication: "LAW-1 and LAW-2 are OBSERVED, not SUPPORTED. Upgrade requires >10,000 samples and cross-model replication."
+      status: ACKNOWLEDGED
+
+    - gap: "Definitional vs empirical status"
+      description: "If commitment is defined as what survives identity-preserving transformation, and identity-preserving is defined as preserves commitment, conservation is tautological. The paper's response (the gate doesn't have access to C(S)) is structurally correct but only partially convincing — the extractor and gate are co-designed."
+      implication: "The formal status depends on whether the equivalence oracle is genuinely independent of the commitment extractor."
+      status: DEEPEST_UNRESOLVED_ISSUE
+      mitigation: "Parameterized by oracle. Critics substitute their own. If conservation fails under a critic's oracle, the law is falsified."
+
+  # === Falsification conditions for provisional claims ===
+
+  provisional_claims_falsification:
+    - claim: "BI/AAI/SI are operationally separable"
+      falsification: "An observer cannot distinguish BI from AAI events above chance."
+      status: UNDEFINED — no operational test exists yet
+
+    - claim: "BI × AAI → SI"
+      falsification: "UNDEFINED — the × operation is not specified"
+      status: UNDEFINED
+
+    - claim: "Intelligence Provenance adds explanatory power"
+      falsification: "A system with IP does not predict outcomes better than data provenance alone."
+      status: UNDEFINED
+
+    - claim: "Commitment persists across provenance edges"
+      falsification: "C(S) ≠ C(T(S)) at a provenance node where T is governed"
+      status: PARTIALLY_DEFINED — follows from Conservation Law falsification

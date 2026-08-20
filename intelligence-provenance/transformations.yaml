@@ -1,0 +1,122 @@
+# Intelligence Provenance — Transformations
+# Records of intelligence-bearing transformations across the provenance graph.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1"
+governance: "Provisional — HYPOTHESIS."
+
+transformations:
+  description: |
+    Records of intelligence-bearing transformations across the provenance graph.
+    Each transformation records: the input signal, the output signal, the
+    operator(s) involved, the transformation type, the commitment before and
+    after, and the conservation status.
+
+  # === Transformation Record Schema ===
+  schema:
+    fields:
+      - name: id
+        type: string
+        description: "Unique transformation record ID"
+      - name: input_signal
+        type: mos:Signal
+        description: "The signal before transformation"
+      - name: output_signal
+        type: mos:Signal
+        description: "The signal after transformation"
+      - name: operator
+        type: mos:Operator
+        description: "The operator that performed the transformation"
+      - name: operator_intelligence_type
+        type: enum
+        values: [BI, AAI, SI]
+        description: "The intelligence type of the operator"
+      - name: transformation_type
+        type: enum
+        values: [compression, paraphrase, translation, abstraction, recursion, curation, extension, validation]
+        description: "The type of transformation performed"
+      - name: governed
+        type: boolean
+        description: "Whether the transformation was governed (passed through six-gate protocol)"
+      - name: commitment_before
+        type: mos:Commitment
+        description: "C(S) before transformation"
+      - name: commitment_after
+        type: mos:Commitment
+        description: "C(T(S)) after transformation"
+      - name: conservation_status
+        type: enum
+        values: [conserved, degraded, failed]
+        description: "Whether commitment was conserved, degraded, or failed"
+      - name: extractor_version
+        type: string
+        description: "Which commitment extractor was used"
+      - name: oracle_version
+        type: string
+        description: "Which oracle verified conservation"
+      - name: timestamp
+        type: ISO 8601
+        description: "When the transformation occurred"
+      - name: provenance_assertion
+        type: object
+        description: "Metadata about who asserted this transformation record"
+
+  # === Transformation Types in Intelligence Provenance ===
+  types:
+    compression:
+      description: "Signal reduced to commitment kernel (Gate 1)."
+      ct_relation: "transformed_by"
+    paraphrase:
+      description: "Signal reworded while preserving commitment kernel."
+      ct_relation: "transformed_by"
+    translation:
+      description: "Signal translated across languages or representations."
+      ct_relation: "transformed_by"
+    abstraction:
+      description: "Signal abstracted to higher-level representation."
+      ct_relation: "transformed_by"
+    recursion:
+      description: "Transformation applied iteratively (Gate 4)."
+      ct_relation: "transformed_by"
+    curation:
+      description: "Operator selected, organized, or filtered signal content."
+      ct_relation: "curated_by"
+      note: "Curation is editorial, not transformative. The signal content is not changed, only selected/organized."
+    extension:
+      description: "Operator extended the signal with additional content."
+      ct_relation: "transformed_by"
+      note: "Extension adds content. The commitment kernel may grow."
+    validation:
+      description: "System or operator verified the signal's conservation status."
+      ct_relation: "verified_by"
+      note: "Validation does not change the signal. It confirms conservation."
+
+  # === Cross-Intelligence Transformations ===
+  cross_intelligence:
+    description: |
+      Transformations where the input operator and output operator have different
+      intelligence types. These are the most interesting cases for Intelligence
+      Provenance.
+    examples:
+      - "BI → AAI: A human writes a prompt that an LLM transforms."
+      - "AAI → BI: An LLM generates output that a human edits."
+      - "AAI → AAI: One LLM's output becomes another LLM's input."
+      - "BI → SI: A human initiates a workflow that the system validates."
+      - "SI → BI: The system flags an issue that a human resolves."
+    commitment_question: |
+      What happens to C(S) when it crosses intelligence boundaries?
+      Does commitment conservation hold across intelligence-type transitions?
+      This is the Commitment × Intelligence ecology (Layer 5).
+
+  # === Connection to Commitment Theory ===
+  commitment_connection:
+    invariant: "C(S) — the commitment kernel"
+    question: "Can C(S) be traced across provenance edges as an invariant constraint?"
+    formalization: "C(I_t) → T_{I_j} → C(I_{t+1})"
+    status: HYPOTHESIS
+    note: |
+      If commitment is conserved across intelligence-type transitions, the
+      Conservation Law extends from signal-transformation space to
+      intelligence-provenance space. This would be a significant result.
+      If commitment is NOT conserved across intelligence-type transitions,
+      the provenance graph records where and how it degrades.

@@ -1,0 +1,109 @@
+# Intellectual Provenance — Public Disclosures
+# Dated records of every public disclosure. Public priority is established here.
+version: "0.1.0"
+last_updated: "2026-08-20"
+governance: "Append-only. Corrections require provenance note."
+
+disclosures:
+  - id: DISC-001
+    date: "2026-01-12"
+    title: "Commitment Conservation Harness — first public disclosure"
+    venue: "Hugging Face"
+    url: "https://huggingface.co/burnmydays/commitment_conservation_harness"
+    what_was_disclosed: "Conservation of commitment concept, transformation harness, experimental approach"
+    establishes_priority_for:
+      - "Conservation Law of Commitment (concept)"
+      - "Commitment kernel (concept)"
+      - "Governed vs ungoverned transformation (concept)"
+    notes: "January 12, 2026 is the earliest public disclosure date. Subsequent January and February versions followed."
+
+  - id: DISC-002
+    date: "2026-03-20"
+    title: "CIVITAE Ontology — AAI/BI intelligence classification"
+    venue: "signomy.xyz (agent-universe)"
+    what_was_disclosed: "BI (Biological Intelligence — human-side, operating directly) and AAI (AI Assisted Intelligence — silicon-side, powered by a System) as agent classification types"
+    establishes_priority_for:
+      - "BI as internal terminology for biological intelligence in agent taxonomy"
+      - "AAI as internal terminology for assisted intelligence in agent taxonomy"
+    notes: "This is the existing priority for AAI/BI. Any new taxonomy must preserve this, not overwrite it."
+
+  - id: DISC-003
+    date: "2026-04"
+    title: "Conservation Law of Commitment paper v05"
+    venue: "Zenodo (DOI: 10.5281/zenodo.20029607)"
+    what_was_disclosed: "Full conservation law, formal definition, falsification protocol, experimental results, MO§ES™ public-layer architecture"
+    establishes_priority_for:
+      - "C(T_gov(S)) = C(S) — formal conservation law"
+      - "Falsification protocol with pinned transformation suite and observable"
+      - "Nine failure modes under ungoverned transformation"
+      - "Six-gate protocol (public specification)"
+      - "McHenry Axioms (public subset)"
+
+  - id: DISC-004
+    date: "2026-04"
+    title: "Experimental Record EXP-001 through EXP-007"
+    venue: "Zenodo (DOI: 10.5281/zenodo.19105225)"
+    what_was_disclosed: "3,950 runs, 57 signals, 181 condition-signal configurations, nine failure modes"
+    establishes_priority_for:
+      - "Empirical support for conservation law"
+      - "Failure mode taxonomy (Step A Boundary, Structural Blindness, Obligation Escalation, Co-degraded Invariance, Modal Frame Inversion, Formal Collapse, Self-referential Collapse, Lexical Scope Widening, NP-negation Blindness)"
+
+  - id: DISC-005
+    date: "2026-04"
+    title: "Transformation Harness"
+    venue: "Zenodo (DOI: 10.5281/zenodo.19109397)"
+    what_was_disclosed: "Public falsification harness — proxy measurement tool"
+    establishes_priority_for:
+      - "Public reproducibility infrastructure"
+      - "Independent oracle substitution protocol"
+
+  - id: DISC-006
+    date: "2026-04-20"
+    title: "P-000 Propositions of Commitment Theory — Research Prospectus"
+    venue: "Zenodo (DOI: 10.5281/zenodo.20031715)"
+    what_was_disclosed: "Generalization from Conservation Law to Commitment Theory. Definitions, propositions, axioms, disambiguation from adjacent fields, nine novel concepts, research program."
+    establishes_priority_for:
+      - "Commitment Theory (CT) as the general theory"
+      - "Disambiguation from Brandom, Walton & Krabbe, CommitmentBank, cryptography, organizational psychology, COR"
+      - "Nine novel concepts (zero-collision verified April 15, 2026)"
+      - "McHenry Axioms (constitutional foundation)"
+      - "Six-gate protocol"
+      - "Second Law of Semantic Entropy"
+
+  - id: DISC-007
+    date: "2026-04"
+    title: "clawRxiv preprint"
+    venue: "clawRxiv (https://www.clawrxiv.io/abs/2604.00832)"
+    what_was_disclosed: "Conservation of Commitment in Language Under Transformative Compression: A Semantic Extension of Shannon Information Theory"
+    establishes_priority_for:
+      - "Shannon extension framing"
+      - "Public preprint record"
+
+  - id: DISC-008
+    date: "2026-04"
+    title: "Concept DOI"
+    venue: "Zenodo (DOI: 10.5281/zenodo.18267278)"
+    what_was_disclosed: "Concept-level DOI for the framework"
+    establishes_priority_for:
+      - "Framework-level concept registration"
+
+  # NOT YET publicly disclosed — tracked for future disclosure
+  - id: DISC-PENDING-001
+    date: null
+    title: "Intelligence Ontology (BI/AAI/SI with initiation dependency)"
+    venue: "Not yet publicly disclosed"
+    what_was_disclosed: "BI/AAI/SI taxonomy with initiation-dependency criterion distinguishing BI from AAI"
+    establishes_priority_for:
+      - "Initiation dependency as taxonomic criterion"
+      - "BI × AAI → SI relational thesis"
+    notes: "Internal proposal only. Public disclosure pending owner decision."
+
+  - id: DISC-PENDING-002
+    date: null
+    title: "Intelligence Provenance"
+    venue: "Not yet publicly disclosed"
+    what_was_disclosed: "Intelligence Provenance as a formal discipline tracing intelligence-bearing events"
+    establishes_priority_for:
+      - "Intelligence Provenance concept"
+      - "Provenance relations (originated_by, initiated_by, received_from, transformed_by, curated_by, redirected_by, authorized_by, committed_by, derived_from)"
+    notes: "Internal proposal only. Public disclosure pending owner decision."

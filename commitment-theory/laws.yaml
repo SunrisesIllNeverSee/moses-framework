@@ -1,0 +1,84 @@
+# Commitment Theory — Laws
+# Empirical laws and candidate laws. These are OBSERVED regularities, NOT definitions.
+# They are falsifiable by the public test harness.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "P-000 Propositions 5-6 (10.5281/zenodo.20031715); v05 paper (10.5281/zenodo.20029607)"
+governance: "Canonical — do not modify without owner approval. Status upgrades require new evidence."
+
+laws:
+
+  # === FIRST LAW: Conservation of Commitment ===
+
+  LAW-1:
+    name: "Conservation Law of Commitment"
+    symbol: "C(T_gov(S)) = C(S)"
+    statement: "For any governed transformation T_gov, the commitment kernel is conserved."
+    status: OBSERVED
+    evidence:
+      experiments: "EXP-001 through EXP-007"
+      runs: 3950
+      signals: 57
+      configurations: 181
+      key_result: "0.94 vs 0.42 stability separation across enforced and unenforced regimes"
+      corpus: "100 sentences, 50 code snippets, 25 proofs"
+      doi: "10.5281/zenodo.19105225"
+    source: "P-000 Proposition 5.1; v05 paper"
+    doi: "10.5281/zenodo.20029607"
+    falsification: "F_10(S) < tau for a non-trivial fraction of samples under the enforced regime, using a reasonable oracle."
+    notes:
+      - "Empirical claim, NOT true by definition. The conservation result is not baked into the definitions."
+      - "Substrate independent (PROP-4.1)."
+      - "Corpus is proof-of-concept scale. Upgrade to SUPPORTED pending large-scale replication (>10,000 samples)."
+      - "The proxy measurement gap (EXP-007 NP-negation blindness) is acknowledged but not closed."
+
+  # === SECOND LAW: Semantic Entropy ===
+
+  LAW-2:
+    name: "Second Law of Semantic Entropy"
+    symbol: "C(T(S)) < C(S) for ungoverned T; cumulative entropy ~ Ω(σ√n)"
+    statement: "Under ungoverned transformation, the commitment kernel decays monotonically with each iteration, and the rate of semantic entropy production is strictly positive. Cumulative entropy after n steps scales as Ω(σ√n), where σ² is the per-step drift variance."
+    status: OBSERVED
+    evidence:
+      experiments: "EXP-001 through EXP-007"
+      key_result: "Fidelity degrades measurably within three iterations under ungoverned conditions; consistent degradation at n >= 5."
+      failure_modes: 9
+      doi: "10.5281/zenodo.19105225"
+    source: "P-000 Proposition 6.1; v05 paper"
+    doi: "10.5281/zenodo.20029607"
+    falsification: "Ungoverned transformation preserves commitment at F_10(S) >= tau for a non-trivial fraction of samples."
+    notes:
+      - "Irreversible without external governance (PROP-3.3)."
+      - "Distinct from Kuhn et al. (2023) semantic entropy (PROP-3.4)."
+
+  # === CANDIDATE LAWS (not yet established) ===
+
+  LAW-CANDIDATE-1:
+    name: "Commitment Capacity"
+    statement: "There exists a maximal signal complexity beyond which governed transformation cannot preserve the full commitment kernel — a commitment capacity analogous to Shannon channel capacity."
+    status: HYPOTHESIS
+    source: "v05 paper (capacity discussion)"
+    doi: "10.5281/zenodo.20029607"
+    falsification: "No such maximal complexity exists — governed transformation preserves commitment for arbitrarily complex signals."
+    note: "Explicitly acknowledged as an operational/empirical analogue, NOT a claim of a tight coding-theorem result. The term 'capacity' carries mathematical weight it does not yet earn."
+
+  LAW-CANDIDATE-2:
+    name: "Commitment Conservation Across Provenance Edges"
+    statement: "Commitment C(S) can be traced across intelligence provenance edges as an invariant constraint, providing a bridge between Commitment Theory and Intelligence Provenance."
+    status: HYPOTHESIS
+    source: "Ontology review v0.1"
+    falsification: "Commitment cannot be computed at provenance nodes, or adds no constraint beyond data provenance alone."
+    note: "The formal bridge between CT and IP. Not yet implemented or tested."
+
+# ============================================================================
+# LAW STATUS DISCIPLINE
+# ============================================================================
+# OBSERVED = empirical result, not yet replicated at scale
+# SUPPORTED = replicated or scaled empirical evidence
+# HYPOTHESIS = testable but not yet established
+#
+# LAW-1 and LAW-2 are OBSERVED, not SUPPORTED.
+# The corpus (3,950 runs, 57 signals) is proof-of-concept scale.
+# Upgrade to SUPPORTED requires large-scale replication (>10,000 samples)
+# and ideally cross-model replication (Claude, Llama, GPT-4).
+# ============================================================================

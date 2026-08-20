@@ -1,0 +1,177 @@
+# Prior-Art / Collision Registry v0.1
+# Detailed collision analysis for terms with external prior usages.
+# We care more about relational/conceptual prior art than mere string matches.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Prior-art searches (ontology review v0.1); CT naming architecture; CT disambiguation guide"
+governance: "Living database. Append-only. Corrections require provenance note."
+
+collisions:
+
+  # === Commitment Theory ===
+
+  - term: "Commitment Theory"
+    canonical_moses_meaning: "Framework studying deontic content preservation in signals under transformation"
+    status: OWN
+    collisions:
+      - field: "Philosophy of language"
+        external_use: "Brandom (1994) — discursive commitment as inferential obligations of speakers in discourse"
+        conceptual_overlap: "MODERATE-HIGH"
+        material_difference: "CT: property of SIGNALS. Brandom: property of AGENTS. Categorical distinction."
+        institutional_anchoring: "Harvard University Press"
+        citation: "Brandom, R.B. (1994). Making It Explicit."
+        action: "Disambiguate in every public document. See Disambiguation_Guide.md."
+
+      - field: "Dialogue logic"
+        external_use: "Walton & Krabbe (1995) — commitment stores as propositions a dialogue participant has accepted"
+        conceptual_overlap: "HIGH"
+        material_difference: "CT: synchronic property of a signal. Walton/Krabbe: diachronic record of dialogue history."
+        institutional_anchoring: "Cambridge University Press"
+        citation: "Walton, D.N. & Krabbe, E.C.W. (1995). Commitment in Dialogue."
+        action: "Disambiguate."
+
+      - field: "NLP / Computational linguistics"
+        external_use: "CommitmentBank (de Marneffe et al., 2019) — speaker commitment to factuality of embedded clauses"
+        conceptual_overlap: "MODERATE"
+        material_difference: "CT: does the signal still obligate Y after transformation? CommitmentBank: how certain is the speaker that X happened?"
+        institutional_anchoring: "Society for Computation in Linguistics"
+        citation: "de Marneffe, M.-C. et al. (2019). The CommitmentBank."
+        action: "Disambiguate."
+
+      - field: "Multiagent systems"
+        external_use: "Singh (1999) — social commitments in multiagent systems, inter-agent deontic relationships"
+        conceptual_overlap: "HIGH"
+        material_difference: "CT: signal-side conservation under transformation. Singh: inter-agent obligation network."
+        institutional_anchoring: "Artificial Intelligence and Law"
+        citation: "Singh, M.P. (1999). An ontology for commitments in multiagent systems."
+        action: "Disambiguate."
+
+      - field: "Organizational psychology"
+        external_use: "Meyer & Allen (1991) — three-component model of organizational commitment"
+        conceptual_overlap: "LOW"
+        material_difference: "CT: semantic invariant. Meyer/Allen: psychological bond to organization."
+        institutional_anchoring: "Human Resource Management Review"
+        citation: "Meyer, J.P. & Allen, N.J. (1991)."
+        action: "Disambiguate."
+
+      - field: "Organizational psychology"
+        external_use: "Solinger et al. (2019) — Commitment System Theory"
+        conceptual_overlap: "LOW"
+        material_difference: "CT: semantic invariants under transformation. CST: psychological network of commitments."
+        institutional_anchoring: "Academy of Management Review"
+        citation: "Solinger, O. et al. (2019). Commitment System Theory."
+        action: "Disambiguate."
+
+      - field: "Behavioral psychology"
+        external_use: "Kiesler — commitment theory of behavioral commitment"
+        conceptual_overlap: "LOW"
+        material_difference: "CT: signal-side deontic invariant. Kiesler: person becoming bound to their behavior."
+        institutional_anchoring: "ScienceDirect"
+        citation: "Kiesler, C.A. (1971)."
+        action: "Disambiguate."
+
+      - field: "Philosophy of language"
+        external_use: "Peirce — commitment theory of assertion"
+        conceptual_overlap: "LOW-MODERATE"
+        material_difference: "CT: signal-side deontic preservation under transformation. Peirce: asserting creates commitment/liability concerning truth."
+        institutional_anchoring: "Re.public Polimi"
+        citation: "Peirce, C.S. — assertion and commitment."
+        action: "Disambiguate."
+
+  # === Assisted Intelligence ===
+
+  - term: "Assisted Intelligence (AAI)"
+    canonical_moses_meaning: "Intelligence requiring external initiation (initiation dependency)"
+    status: DEFINE
+    collisions:
+      - field: "AI industry"
+        external_use: "FedTech Magazine (2020) — AI that assists humans with simple tasks"
+        conceptual_overlap: "LOW"
+        material_difference: "MO§ES™: initiation dependency (HOW intelligence starts). FedTech: human assistance (WHAT AI is for)."
+        institutional_anchoring: "FedTech Magazine"
+        action: "Disambiguation paragraph REQUIRED in every public document."
+
+      - field: "Medical AI"
+        external_use: "AMA CPT Appendix S (2021) — assistive medical AI classification"
+        conceptual_overlap: "LOW"
+        material_difference: "MO§ES™: initiation dependency. AMA: medical AI assistance classification."
+        institutional_anchoring: "American Medical Association"
+        action: "Disambiguation paragraph required."
+
+      - field: "AI industry"
+        external_use: "Forbes/Cognilytica (2020) — AI working in conjunction with people"
+        conceptual_overlap: "LOW"
+        material_difference: "MO§ES™: initiation dependency. Forbes/Cognilytica: human-AI collaboration."
+        institutional_anchoring: "Forbes, Cognilytica"
+        action: "Disambiguation paragraph required."
+
+      - field: "Business taxonomy"
+        external_use: "PwC (2018) — assisted AI as business taxonomy category"
+        conceptual_overlap: "LOW"
+        material_difference: "MO§ES™: initiation dependency. PwC: business AI classification."
+        institutional_anchoring: "PwC"
+        action: "Disambiguation paragraph required."
+    legal_risk: "Using AAI with a different meaning creates likelihood of confusion. Trademark registration may be prevented by existing uses."
+
+  # === System Intelligence ===
+
+  - term: "System Intelligence (SI)"
+    canonical_moses_meaning: "System property emerging from BI × AAI interaction"
+    status: WATCH
+    collisions:
+      - field: "Organizational psychology"
+        external_use: "Hämäläinen & Saarinen (2004+) — Systems Intelligence as human cognitive capacity in complex systems"
+        conceptual_overlap: "VERY LOW"
+        material_difference: "MO§ES™: emergent system property. Hämäläinen: human cognitive capacity."
+        institutional_anchoring: "Aalto University — extensive publication record since 2004"
+        action: "Consider renaming to 'Systemic Intelligence' or 'System-Emergent Intelligence'. Disambiguation paragraph required."
+    legal_risk: "'System Intelligence' is one letter from 'Systems Intelligence.' Trademark and confusion risk."
+
+  # === Intelligence Provenance ===
+
+  - term: "Intelligence Provenance"
+    canonical_moses_meaning: "Tracing lineage of intelligence-bearing events across BI/AAI/system forms"
+    status: DEFINE
+    collisions:
+      - field: "Cross-substrate intelligence"
+        external_use: "Lineage of Intelligence (Zenodo 10.5281/zenodo.20006596) — cross-substrate continuity"
+        conceptual_overlap: "MODERATE"
+        material_difference: "MO§ES™: full provenance suite (origin, initiation, transformation, contribution, curation, authority, commitment, persistence, lineage). Lineage of Intelligence: cross-substrate continuity only."
+        institutional_anchoring: "Zenodo"
+        action: "Cite and distinguish."
+
+      - field: "AI ontology"
+        external_use: "Provenance Not Kind (suposystem.ai) — provenance in relation to intelligence ontological status"
+        conceptual_overlap: "MODERATE"
+        material_difference: "MO§ES™: provenance of intelligence-bearing events. Provenance Not Kind: provenance vs. kind classification."
+        institutional_anchoring: "suposystem.ai"
+        action: "Cite and distinguish."
+    note: "Not found in searched corpus in the specified sense. 'In the searched corpus' qualifier applies."
+
+  # === Conservation of Resources ===
+
+  - term: "Conservation of Resources (COR)"
+    canonical_moses_meaning: "N/A — external theory, resolved by CCT→CT rename"
+    status: AVOID
+    collisions:
+      - field: "Organizational psychology"
+        external_use: "Hobfoll (1989) — Conservation of Resources theory, 19,000+ citations, 35 years"
+        conceptual_overlap: "LOW"
+        material_difference: "CT: formal mathematical conservation. COR: behavioral tendency."
+        institutional_anchoring: "American Psychologist"
+        action: "RESOLVED — CCT→CT rename removed 'conservation' from theory name. 'Conservation' stays at law level only."
+    note: "This collision was the motivation for the CCT→CT rename (April 14, 2026)."
+
+  # === Semantic Entropy ===
+
+  - term: "Semantic Entropy"
+    canonical_moses_meaning: "Rate of deontic decay under transformation (CT sense)"
+    status: DEFINE
+    collisions:
+      - field: "NLP"
+        external_use: "Kuhn et al. (2023) — semantic entropy as uncertainty in LLM outputs measured by clustering"
+        conceptual_overlap: "MODERATE"
+        material_difference: "CT: degradation of commitment across pipeline. Kuhn: uncertainty in generation."
+        institutional_anchoring: "NeurIPS"
+        citation: "Kuhn, L. et al. (2023). Semantic Uncertainty. NeurIPS."
+        action: "Disambiguate. See P-000 Proposition 6.4."

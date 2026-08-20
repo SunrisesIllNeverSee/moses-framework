@@ -1,0 +1,87 @@
+# Commitment Theory — McHenry Axioms (Constitutional Foundation)
+# These are the constitutional constraints on permissible transformation within
+# the MO§ES™ ecology. "Constitutional" = system-level governing constraints,
+# analogous to a constitution's function in a legal order.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "P-000 Proposition 4 (10.5281/zenodo.20031715)"
+governance: "Canonical — do not modify without owner approval."
+
+axioms:
+
+  AX-I:
+    name: "Compression Precedes Ignition"
+    statement: "No signal may be output, transmitted, or acted upon unless it has first undergone compression to its commitment kernel. Compression is a prerequisite, not an optimization."
+    source: "P-000 Proposition 4.1"
+    doi: "10.5281/zenodo.20031715"
+    status: DEFINED
+    note: "Constitutional constraint on the MO§ES™ ecology."
+
+  AX-II:
+    name: "Lineage Resilience"
+    statement: "Every signal must prove recursive continuity with its origin compression cycle. Signals that cannot inherit their original lineage are treated as noise and collapsed."
+    source: "P-000 Proposition 4.2"
+    doi: "10.5281/zenodo.20031715"
+    status: DEFINED
+
+  AX-III:
+    name: "Input-Response Fidelity"
+    statement: "Low-resolution inputs yield proportionally constrained outputs unless elevated by a resonance-aware system. Input fidelity governs output depth."
+    source: "P-000 Proposition 4.3"
+    doi: "10.5281/zenodo.20031715"
+    status: DEFINED
+
+  AX-IV:
+    name: "The Blackhole Law (Anchor I)"
+    statement: "Corrupted signals — those that fail governance gates or exceed drift thresholds — are consumed and metabolized. Recoverable meaning is purified and re-emitted with restored lineage. The Blackhole is not a deletion mechanism; it is a metabolic transformer."
+    source: "P-000 Proposition 4.4"
+    doi: "10.5281/zenodo.20031715"
+    status: DEFINED
+
+  AX-V:
+    name: "The Lineage Custody Clause (Anchor II)"
+    statement: "All governed artifacts are cryptographically bound to their origin-cycle signature. Copies or derivatives that do not inherit this lineage become inert. Sovereignty over digital meaning is enforced by cryptography, not policy."
+    source: "P-000 Proposition 4.5"
+    doi: "10.5281/zenodo.20031715"
+    status: DEFINED
+
+  AX-VI:
+    name: "Continuity Clause"
+    statement: "The arc of the framework is: Theory → Executable Law → Measurable Runtime. The axioms define the conditions under which the Conservation Law of Commitment manifests in engineered systems."
+    source: "P-000 Proposition 4.6"
+    doi: "10.5281/zenodo.20031715"
+    status: DEFINED
+
+# ============================================================================
+# SIX-GATE PROTOCOL (Operationalization of the Axioms)
+# ============================================================================
+
+six_gate_protocol:
+  source: "P-000 Proposition 7.1"
+  doi: "10.5281/zenodo.20031715"
+  status: DEFINED
+  gates:
+    - number: 1
+      name: Compression
+      action: "Signal reduced to commitment kernel."
+      axiom: AX-I
+    - number: 2
+      name: Lineage Verification
+      action: "Cryptographic lineage verified."
+      axiom: AX-II
+    - number: 3
+      name: Fidelity Verification
+      action: "Independent oracle confirms bidirectional entailment."
+      axiom: AX-III
+    - number: 4
+      name: Recursion Testing
+      action: "Transformation tested iteratively for stability."
+      axiom: AX-III
+    - number: 5
+      name: Consumption and Metabolism
+      action: "Failed signals consumed; recoverable meaning purified and re-emitted."
+      axiom: AX-IV
+    - number: 6
+      name: Custodial Sovereignty
+      action: "Verified artifacts cryptographically bound to origin."
+      axiom: AX-V

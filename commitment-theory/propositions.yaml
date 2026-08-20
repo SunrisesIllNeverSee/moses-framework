@@ -1,0 +1,153 @@
+# Commitment Theory — Propositions
+# Propositions are claims that follow from definitions and axioms.
+# They are NOT empirical laws (those are in laws.yaml).
+# They are NOT definitions (those are in /ontology/definitions.yaml).
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "P-000 (10.5281/zenodo.20031715)"
+governance: "Canonical — do not modify without owner approval."
+
+propositions:
+
+  # === Definitional propositions (from P-000 Proposition 1) ===
+
+  PROP-1.1:
+    statement: "A signal S is a structured sequence of symbols carrying information and capable of bearing deontic content."
+    status: DEFINED
+    source: "P-000 Proposition 1.1"
+    doi: "10.5281/zenodo.20031715"
+    note: "See /ontology/definitions.yaml DEF-001"
+
+  PROP-1.2:
+    statement: "A transformation T maps a signal to a modified signal. May be lossy or lossless."
+    status: DEFINED
+    source: "P-000 Proposition 1.2"
+    doi: "10.5281/zenodo.20031715"
+
+  PROP-1.3:
+    statement: "The commitment kernel C(S) is the minimal identity-preserving deontic invariant of a signal."
+    status: DEFINED
+    source: "P-000 Proposition 1.3"
+    doi: "10.5281/zenodo.20031715"
+
+  PROP-1.4:
+    statement: "A transformation is governed if and only if it satisfies constitutional constraints designed to preserve the commitment kernel."
+    status: DEFINED
+    source: "P-000 Proposition 1.4"
+    doi: "10.5281/zenodo.20031715"
+
+  PROP-1.5:
+    statement: "A transformation is ungoverned if it lacks such constraints."
+    status: DEFINED
+    source: "P-000 Proposition 1.5"
+    doi: "10.5281/zenodo.20031715"
+
+  PROP-1.6:
+    statement: "Fidelity is the degree to which the commitment kernel of the output matches the input, measured by an independent oracle."
+    status: DEFINED
+    source: "P-000 Proposition 1.6"
+    doi: "10.5281/zenodo.20031715"
+
+  PROP-1.7:
+    statement: "Signals may be classified by deontic structure: deontic, descriptive, narrative, self-referential."
+    status: DEFINED
+    source: "P-000 Proposition 1.7"
+    doi: "10.5281/zenodo.20031715"
+
+  PROP-1.8:
+    statement: "Transformations may be classified by operation: compression, paraphrase, translation, abstraction, recursion."
+    status: DEFINED
+    source: "P-000 Proposition 1.8"
+    doi: "10.5281/zenodo.20031715"
+
+  # === Disambiguation propositions (from P-000 Proposition 2) ===
+
+  PROP-2.1:
+    statement: "CT's commitment is distinct from Brandom's discursive commitment (agent-side vs. signal-side)."
+    status: DEFINED
+    source: "P-000 Proposition 2.1"
+    doi: "10.5281/zenodo.20031715"
+    note: "Brandom: property of agents. CT: property of signals. Categorical distinction."
+
+  PROP-2.2:
+    statement: "CT's commitment is distinct from the CommitmentBank's speaker commitment (epistemic stance vs. deontic preservation)."
+    status: DEFINED
+    source: "P-000 Proposition 2.2"
+    doi: "10.5281/zenodo.20031715"
+
+  PROP-2.3:
+    statement: "CT's commitment is distinct from cryptographic commitment (the thing being protected vs. the protection mechanism)."
+    status: DEFINED
+    source: "P-000 Proposition 2.3"
+    doi: "10.5281/zenodo.20031715"
+
+  PROP-2.4:
+    statement: "CT's commitment is distinct from organizational commitment (semantic invariant vs. psychological bond)."
+    status: DEFINED
+    source: "P-000 Proposition 2.4"
+    doi: "10.5281/zenodo.20031715"
+
+  PROP-2.5:
+    statement: "CT's conservation is distinct from COR theory (formal invariance vs. behavioral tendency)."
+    status: DEFINED
+    source: "P-000 Proposition 2.5"
+    doi: "10.5281/zenodo.20031715"
+    note: "The full phrase 'Conservation Law of Commitment' does not appear in COR or any other literature."
+
+  # === Structural propositions ===
+
+  PROP-3.1:
+    statement: "The nine novel concepts of CT (commitment kernel, governed transformation, ungoverned transformation, conservation law of commitment, deontic conservation, commitment invariance, signal commitment preservation, meaning preservation law, commitment governance test) occupy clean conceptual territory with zero search results as of April 15, 2026."
+    status: SUPPORTED
+    source: "P-000 Proposition 3; Nine_Novel_Concepts.md"
+    doi: "10.5281/zenodo.20031715"
+    note: "Verified across Google Scholar, Scopus, arXiv, ACL Anthology, PhilPapers, SSRN, IEEE Xplore. 'In the searched corpus' qualifier applies."
+
+  PROP-3.2:
+    statement: "CT introduces a taxonomy of nine characteristic failure modes under ungoverned transformation."
+    status: OBSERVED
+    source: "P-000 Proposition 6.2; EXP-001 through EXP-007"
+    doi: "10.5281/zenodo.19105225"
+    note: "Obligation escalation, scope widening, exception dropping, modal frame inversion, co-degraded invariance, NP-negation blindness, formal collapse, self-referential collapse, lexical scope widening."
+
+  PROP-3.3:
+    statement: "Semantic entropy is irreversible without external governance. Once commitment has decayed, it cannot be recovered by further ungoverned transformation."
+    status: OBSERVED
+    source: "P-000 Proposition 6.3"
+    doi: "10.5281/zenodo.20031715"
+    note: "Recovery requires re-anchoring to canonical source or metabolism through governed system."
+
+  PROP-3.4:
+    statement: "CT's semantic entropy is distinct from Kuhn et al. (2023) semantic entropy (deontic decay rate vs. generation uncertainty)."
+    status: DEFINED
+    source: "P-000 Proposition 6.4"
+    doi: "10.5281/zenodo.20031715"
+
+  # === Substrate independence ===
+
+  PROP-4.1:
+    statement: "The Conservation Law holds regardless of the specific system performing the transformation. It describes a property of the signal and transformation constraints, not of any particular model architecture."
+    status: DEFINED
+    source: "P-000 Proposition 5.4"
+    doi: "10.5281/zenodo.20031715"
+    note: "Substrate independence is a definitional property of the law, not an empirical finding."
+
+  # === Extension propositions (intelligence ontology — PROVISIONAL) ===
+
+  PROP-5.1:
+    statement: "Commitment C(S) can be traced across provenance edges as an invariant constraint."
+    status: HYPOTHESIS
+    source: "Ontology review v0.1"
+    note: "The formal bridge between Commitment Theory and Intelligence Provenance. Not yet implemented or tested."
+
+  PROP-5.2:
+    statement: "What happens to a commitment when it is transferred between or transformed by different intelligences can be modeled as C(I_t) → T_{I_j} → C(I_{t+1})."
+    status: SPECULATIVE
+    source: "User proposal (Layer 5)"
+    note: "This is the Commitment × Intelligence ecology. Not yet formalized."
+
+  PROP-5.3:
+    statement: "BI × AAI → SI — biological intelligence combined with assisted intelligence produces system intelligence."
+    status: SPECULATIVE
+    source: "User proposal"
+    note: "The × operation is undefined. Cannot be upgraded until × is specified and a falsification condition is defined."

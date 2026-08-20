@@ -1,0 +1,92 @@
+# Enterprise — Indexed Program Configurations
+# Commercial packaging is DOWNSTREAM from the canonical ontology.
+# These programs instantiate canonical constructs for specific commercial applications.
+# They do NOT define or modify the ontology.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1; existing enterprise build package"
+governance: "Downstream from canonical. Changes to ontology require owner approval. Program configs can be modified by enterprise team."
+
+programs:
+  description: |
+    Indexed Programs are commercial applications of the MO§ES™ framework.
+    Each program instantiates canonical constructs (Micro Evals, commitment
+    conservation, intelligence provenance) for a specific market segment.
+    Programs do NOT define or modify the ontology — they consume it.
+
+  # === Program Schema ===
+  schema:
+    fields:
+      - name: id
+        type: string
+        description: "Unique program ID"
+      - name: name
+        type: string
+        description: "Program name"
+      - name: market_segment
+        type: string
+        description: "Target market"
+      - name: canonical_constructs_used
+        type: list
+        description: "Which ontology entities and Micro Evals this program uses"
+      - name: pilot_status
+        type: enum
+        values: [planned, in_pilot, completed, deferred]
+        description: "Current pilot status"
+      - name: commercial_packaging
+        type: string
+        description: "How the program is packaged for the market"
+      - name: proprietary_layer
+        type: string
+        description: "What is proprietary (not in canonical repo)"
+
+  # === Programs ===
+  entries:
+    - id: PROG-001
+      name: "SigRank — Independent Measurement Platform for AI-Assisted Work"
+      market_segment: "AI evaluation / B2B SaaS"
+      canonical_constructs_used:
+        - "Micro Eval (E_μ)"
+        - "Commitment conservation (C(T_gov(S)) = C(S))"
+        - "Intelligence Provenance (P_I(x))"
+        - "BI/AAI operator classification"
+      pilot_status: in_pilot
+      commercial_packaging: "SaaS dashboard measuring AI-assisted work quality via Micro Evals"
+      proprietary_layer: "MO§ES™ enforcement architecture (SCS, S³, Mediator, SigEconomy)"
+      note: "SigRank is the public-facing measurement product. The canonical ontology sits beneath it."
+
+    - id: PROG-002
+      name: "MO§ES™ Enforcement — Governance Infrastructure"
+      market_segment: "Enterprise AI governance"
+      canonical_constructs_used:
+        - "Six-gate protocol"
+        - "Commitment conservation"
+        - "Lineage tracking"
+        - "Authority relations"
+      pilot_status: planned
+      commercial_packaging: "Enterprise governance layer for AI systems"
+      proprietary_layer: "Full MO§ES™ enforcement architecture (patent-covered)"
+      note: "This is the patent-covered operational system. Public-layer spec only in canonical repo."
+
+    - id: PROG-003
+      name: "Intelligence Provenance Platform"
+      market_segment: "AI accountability / audit"
+      canonical_constructs_used:
+        - "Intelligence Provenance graph (P_I(x))"
+        - "Provenance relations (originated_by, initiated_by, etc.)"
+        - "BI/AAI/SI taxonomy"
+        - "Commitment tracing across provenance edges"
+      pilot_status: planned
+      commercial_packaging: "Provenance tracking and audit platform for AI-generated content"
+      proprietary_layer: "Implementation details of provenance graph storage and querying"
+      note: "Depends on IP-001 (Intelligence Provenance adds explanatory power) being at least HYPOTHESIS with initial evidence."
+
+  # === Discipline ===
+  discipline: |
+    Enterprise programs are DOWNSTREAM from the canonical ontology.
+    - Programs consume ontology entities; they do not create them.
+    - Programs instantiate Micro Evals; they do not redefine them.
+    - Programs use provenance relations; they do not add new ones to the canonical set.
+    - If a program needs a construct not in the ontology, the ontology must be
+      updated FIRST (through owner approval), then the program can use it.
+    - Commercial packaging never appears in the canonical directories.

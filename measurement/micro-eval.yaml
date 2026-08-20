@@ -1,0 +1,137 @@
+# Micro Eval — Measurement Primitive
+# E_μ = (I_a, S_t, T, I_b, S_{t+1}, C, P, O)
+# The micro eval is the primitive. But now we know what sits beneath it:
+# the ontology (operators, states, transformations, commitments, provenance).
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1; user proposal (Layer 6)"
+governance: "Provisional — HYPOTHESIS. Do not freeze tuple notation until ontology entities are stable."
+
+micro_eval:
+  symbol: "E_μ"
+  description: "A measurement unit recording an intelligence/system interaction, transformation, commitments involved, provenance, and resulting outcome."
+  status: HYPOTHESIS
+
+  # === Tuple Notation ===
+  tuple: "E_μ = (I_a, S_t, T, I_b, S_{t+1}, C, P, O)"
+  notation_note: |
+    The tuple representation is shorthand. The YAML structure below is the
+    canonical form. Do not force mathematical notation where it adds no
+    explanatory or falsifiable value.
+
+  # === Components (each maps to an ontology entity) ===
+  components:
+    initiating_operator:
+      symbol: "I_a"
+      ontology_entity: "mos:Operator (BI or AAI)"
+      description: "The operator that initiated the intelligence-bearing event."
+      required: true
+      derivation: "From /ontology/primitives.yaml: operator"
+
+    initial_state:
+      symbol: "S_t"
+      ontology_entity: "mos:State"
+      description: "System state before the transformation."
+      required: true
+      derivation: "From /ontology/primitives.yaml: state"
+
+    transformation:
+      symbol: "T"
+      ontology_entity: "mos:Transformation (governed or ungoverned)"
+      description: "The operation applied to the signal."
+      required: true
+      derivation: "From /ontology/primitives.yaml: transformation"
+
+    resulting_operator:
+      symbol: "I_b"
+      ontology_entity: "mos:Operator (BI, AAI, or SI if upgraded)"
+      description: "The operator that produced or received the transformed signal."
+      required: true
+      derivation: "From /ontology/primitives.yaml: operator"
+
+    resulting_state:
+      symbol: "S_{t+1}"
+      ontology_entity: "mos:State"
+      description: "System state after the transformation."
+      required: true
+      derivation: "From /ontology/primitives.yaml: state"
+
+    commitment:
+      symbol: "C"
+      ontology_entity: "mos:Commitment C(S)"
+      description: "The commitment kernel of the signal, from Commitment Theory."
+      required: true
+      derivation: "From /ontology/primitives.yaml: commitment"
+      note: "Checked at initial and resulting states. Conservation: C(S) = C(T_gov(S)) for governed T."
+
+    provenance:
+      symbol: "P"
+      ontology_entity: "mos:Provenance (subgraph)"
+      description: "The provenance assertions recording the event's lineage."
+      required: true
+      derivation: "From /ontology/primitives.yaml: provenance; /ontology/relations.yaml: provenance relations"
+      note: "Includes initiated_by, transformed_by, extracted_by, curated_by, authorized_by relations."
+
+    outcome:
+      symbol: "O"
+      ontology_entity: "mos:Outcome"
+      description: "The measured result of the transformation."
+      required: true
+      derivation: "From /ontology/primitives.yaml: outcome"
+
+  # === Derivation Rule ===
+  derivation_rule: |
+    Every component MUST map to an ontology entity.
+    If a component does not map, either:
+    (a) the ontology is incomplete — add the entity, or
+    (b) the Micro Eval is over-specified — remove the component.
+    This validation should be a CI check.
+
+    The Micro Eval is DERIVED from the ontology, not a parallel conceptual system.
+    It does not create new vocabulary. It instantiates existing ontology entities
+    in a measurement context.
+
+  # === Derived Projections ===
+  # The micro eval is the primitive. These are derived projections:
+  derived_projections:
+    - name: "Operator baseline"
+      description: "Aggregate Micro Evals for a single operator to establish baseline performance."
+      derivation: "Filter E_μ by I_a or I_b = operator_id"
+
+    - name: "Performative benchmark"
+      description: "Compare Micro Eval outcomes across operators on the same transformation."
+      derivation: "Group E_μ by T, compare O across I_a/I_b"
+
+    - name: "Workflow diagnostic"
+      description: "Trace Micro Evals through a provenance chain to identify conservation failures."
+      derivation: "Follow P chain, check C conservation at each node"
+
+    - name: "Team topology"
+      description: "Map the BI/AAI/SI composition of a workflow from Micro Eval provenance."
+      derivation: "Aggregate I_a/I_b intelligence types across P chain"
+
+    - name: "Organizational intelligence"
+      description: "Aggregate Micro Evals across an organization to measure system-level intelligence."
+      derivation: "Aggregate all E_μ for an organization's workflows"
+
+  # === Connection to Commitment Theory ===
+  commitment_connection: |
+    The commitment component (C) connects Micro Evals to Commitment Theory.
+    Each Micro Eval records C(S) before and after transformation, enabling
+    conservation checking at the measurement level.
+
+    If C(S_t) = C(S_{t+1}) for governed T, the Micro Eval records conservation.
+    If C(S_t) ≠ C(S_{t+1}), the Micro Eval records degradation or failure.
+
+  # === Connection to Intelligence Provenance ===
+  provenance_connection: |
+    The provenance component (P) connects Micro Evals to Intelligence Provenance.
+    Each Micro Eval carries a provenance subgraph recording the intelligence
+    lineage of the event.
+
+  # === What the Micro Eval is NOT ===
+  what_it_is_not:
+    - "NOT a standard RL trajectory (s, a, r, s') — it has commitment and provenance constraints that a standard trajectory does not."
+    - "NOT a parallel conceptual system — it is derived from the ontology."
+    - "NOT an enterprise-specific construct — it is a canonical measurement primitive."
+    - "NOT a claim about intelligence itself — it records observable intelligence-bearing events."

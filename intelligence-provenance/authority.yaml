@@ -1,0 +1,84 @@
+# Intelligence Provenance — Authority
+# Authority is a governance property, NOT an intelligence property.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1; CIVITAE ontology"
+governance: "Provisional — HYPOTHESIS."
+
+authority:
+  definition: "The right to enforce a transformation, granted by a governance process."
+  status: DEFINED
+  critical_note: |
+    Authority is a GOVERNANCE property, NOT an intelligence property.
+    The operator has authority; the intelligence does not.
+    An AAI operator can have authority (granted by governance).
+    A BI operator can have authority (granted by governance).
+    SI does NOT have authority in v0.1 (it is a system property, not a participant).
+
+  # === Authority in CIVITAE ===
+  civitae_context: |
+    In CIVITAE, Operators grant or confirm authority. The Operator is the human
+    (BI) who runs the city-state. The human-in-the-loop is constitutional —
+    it's the BI enforcement gate.
+
+    This repository extends authority to AAI operators (when governance grants
+    them authority) but maintains that authority is governance-granted, not
+    intelligence-inherent.
+
+  # === Authority Relations ===
+  relations:
+    authorized_by:
+      domain: transformation
+      range: operator
+      meaning: "An operator with authority granted permission for the transformation."
+      status: HYPOTHESIS
+      note: "The operator has authority (governance-granted). The transformation is authorized by that operator."
+
+    granted_to:
+      domain: authority
+      range: operator
+      meaning: "Governance granted authority to an operator."
+      status: HYPOTHESIS
+
+    revoked_from:
+      domain: authority
+      range: operator
+      meaning: "Governance revoked authority from an operator."
+      status: HYPOTHESIS
+
+    contested_by:
+      domain: authority_assertion
+      range: operator
+      meaning: "An operator disputes the authority claim."
+      status: HYPOTHESIS
+
+  # === Authority vs. Intelligence ===
+  authority_vs_intelligence: |
+    Authority and intelligence are orthogonal dimensions:
+    - A BI operator can be intelligent but unauthorized.
+    - An AAI operator can be authorized but not "intelligent" in any metaphysical sense.
+    - Authority is about the RIGHT to enforce; intelligence is about the CAPACITY to operate.
+    - Conflating authority with intelligence is a category error.
+
+  # === Authority in Provenance ===
+  in_provenance: |
+    In the provenance graph, authority records WHO HAD THE RIGHT to perform or
+    authorize a transformation. This is distinct from:
+    - originated_by (who created the intelligence content)
+    - initiated_by (who triggered the event)
+    - committed_by (who produced the commitment-bearing signal)
+    - authorized_by (who had the right to authorize the transformation)
+
+    A single transformation can have different operators for each relation:
+    - Originated by AAI (LLM generated content)
+    - Initiated by BI (human triggered the LLM)
+    - Transformed by AAI (LLM transformed the signal)
+    - Authorized by BI (human approved the transformation)
+    - Committed by BI (human signed off on the final signal)
+
+  # === Open Questions ===
+  open_questions:
+    - "Can AAI operators hold authority independently, or only derivatively (authority granted through a BI operator)?"
+    - "If SI becomes a participant class in a future version, can SI hold authority?"
+    - "How is authority represented when it is contested?"
+    - "How is authority transferred or revoked in the provenance graph?"

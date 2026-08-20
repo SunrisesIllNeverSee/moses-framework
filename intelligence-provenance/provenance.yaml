@@ -1,0 +1,157 @@
+# Intelligence Provenance — Provenance Graph
+# P_I(x) = provenance graph of intelligence contributing to state/event/output x.
+# Traces origin, initiation, transformation, contribution, curation, authority,
+# commitment, persistence, and downstream lineage of intelligence through
+# biological, assisted, and systemic forms.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1; user proposal (Layer 4)"
+governance: "Provisional — HYPOTHESIS. Not yet implemented or tested."
+
+intelligence_provenance:
+  symbol: "P_I(x)"
+  definition: |
+    The provenance graph of intelligence contributing to a state, event, or
+    output x. Traces origin, initiation, transformation, contribution,
+    curation, authority, commitment, persistence, and downstream lineage of
+    intelligence through biological, assisted, and systemic forms.
+  status: HYPOTHESIS
+
+  # === What IP Traces ===
+  traces:
+    - origin
+    - initiation
+    - transformation
+    - contribution
+    - curation
+    - authority
+    - commitment
+    - persistence
+    - downstream_lineage
+
+  # === What IP Must Be Distinguished From ===
+  distinguished_from:
+    - system: "Data provenance (W3C PROV)"
+      what_it_traces: "Data artifacts and their derivations"
+      how_IP_differs: "IP traces intelligence-bearing events as first-class entities, not annotations on data artifacts."
+      overlap: "LOW"
+      status: "Must explicitly distinguish in every public document."
+
+    - system: "Content provenance (C2PA)"
+      what_it_traces: "Content edits and editing history"
+      how_IP_differs: "IP traces intelligence lineage, not content modifications."
+      overlap: "LOW"
+      status: "Must explicitly distinguish."
+
+    - system: "Semantic provenance"
+      what_it_traces: "Semantic relationships between data elements"
+      how_IP_differs: "IP traces intelligence-bearing events, not semantic relationships."
+      overlap: "LOW"
+      status: "Must explicitly distinguish."
+
+    - system: "Reasoning provenance"
+      what_it_traces: "Reasoning chains and inference steps"
+      how_IP_differs: "IP traces intelligence contributions across operators, not reasoning steps within a single operator."
+      overlap: "LOW-MODERATE"
+      status: "Must explicitly distinguish."
+
+    - system: "Decision provenance"
+      what_it_traces: "Decision-making processes and inputs"
+      how_IP_differs: "IP traces intelligence lineage, not decision processes."
+      overlap: "LOW-MODERATE"
+      status: "Must explicitly distinguish."
+
+    - system: "Authorship"
+      what_it_traces: "Who created a work"
+      how_IP_differs: "IP is significantly richer than authorship. An artifact can have AAI origin → BI transformation → AAI extension → BI curation → SI workflow validation → BI commitment. Calling that merely 'AI-generated' is obviously inadequate."
+      overlap: "LOW"
+      status: "IP subsumes and extends authorship."
+
+    - system: "Model attribution"
+      what_it_traces: "Which model produced an output"
+      how_IP_differs: "IP traces the full intelligence lineage, not just the final model."
+      overlap: "LOW"
+      status: "IP subsumes and extends model attribution."
+
+  # === The Distinguishing Claim ===
+  distinguishing_claim: |
+    IP traces intelligence-bearing events as FIRST-CLASS ENTITIES, not as
+    annotations on data artifacts. The provenance graph records who/what
+    initiated, transformed, curated, authorized, and committed at each node.
+
+    Whether this is sufficient distinction from W3C PROV is an open question
+    (see claims registry IP-002). PROV has wasGeneratedBy, wasDerivedFrom,
+    used, wasAssociatedWith, wasAttributedTo. IP's originated_by, initiated_by,
+    transformed_by, derived_from may be isomorphic to PROV relations with
+    "intelligence" as a label. IP must demonstrate what it traces that PROV
+    cannot.
+
+  # === Example Provenance Graph ===
+  example_graph:
+    artifact: "A final report produced by an AI-assisted workflow"
+    chain:
+      - step: 1
+        operator: "AAI (LLM)"
+        relation: originated_by
+        description: "AAI generated initial draft"
+      - step: 2
+        operator: "BI (human editor)"
+        relation: transformed_by
+        description: "BI transformed the draft (editing, restructuring)"
+      - step: 3
+        operator: "AAI (different LLM)"
+        relation: transformed_by
+        description: "AAI extended the draft (additional sections)"
+      - step: 4
+        operator: "BI (subject matter expert)"
+        relation: curated_by
+        description: "BI curated content (selected, organized, filtered)"
+      - step: 5
+        operator: "SI (system workflow)"
+        relation: verified_by
+        description: "SI validated the workflow (system-level consistency check)"
+      - step: 6
+        operator: "BI (approver)"
+        relation: committed_by
+        description: "BI committed the final signal (approval, sign-off)"
+    note: |
+      Calling this merely "AI-generated" becomes obviously inadequate.
+      The provenance graph captures the full intelligence lineage.
+
+  # === Connection to MO§ES Lineage ===
+  moses_connection: |
+    Intelligence Provenance connects directly to MO§ES™ lineage tracking.
+    MO§ES™ provides the execution/lineage machinery (cryptographic lineage
+    hashes, Fidelity Seals, custody anchors). IP provides the intelligence
+    attribution layer on top of that machinery.
+
+  # === Connection to Commitment Theory ===
+  commitment_connection: |
+    Commitment Theory provides the invariant (C(S)) that can be traced across
+    provenance edges. The question is: can C(S) be computed at each provenance
+    node, and does conservation hold across the provenance graph?
+
+    C(I_t) → T_{I_j} → C(I_{t+1})
+
+    What happens to a commitment when it is transferred between or transformed
+    by different intelligences? This is the Commitment × Intelligence ecology
+    (Layer 5). Not yet formalized.
+
+  # === Feasibility ===
+  feasibility:
+    feasible_if:
+      - "Intelligence is treated operationally (observable events) rather than metaphysically"
+      - "Provenance edges are assertions (claims about what happened) rather than facts"
+      - "The system explicitly models uncertainty and contestation"
+      - "The provenance graph is constrained by the Conservation Law (commitment checked at each node)"
+      - "The system does not claim to solve what intelligence 'is'"
+
+    not_feasible_if:
+      - "The system requires a metaphysical definition of intelligence to function"
+      - "The system claims to trace 'intelligence itself' rather than intelligence-bearing events"
+      - "The provenance relations presuppose agency where only emergence exists (SI as participant)"
+
+  # === Falsification ===
+  falsification:
+    condition: "A system with Intelligence Provenance does not predict outcomes better than a system with data provenance alone."
+    status: "UNDEFINED — not yet tested"

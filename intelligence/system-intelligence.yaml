@@ -1,0 +1,104 @@
+# System Intelligence (SI)
+# v0.1 treatment: SI is a SYSTEM PROPERTY, NOT a participant class.
+# This is the most parsimonious position. May be upgraded only if operational
+# criteria for SI-as-participant are developed and tested.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1"
+governance: "Provisional — SPECULATIVE. Owner must decide ontological status before public disclosure."
+
+system_intelligence:
+  symbol: "SI"
+  description: "A property of a system containing BI and AAI operators, observable when the system's behavior cannot be attributed to any single operator."
+  status: SPECULATIVE
+
+  # === Ontological Treatment (v0.1) ===
+  ontological_treatment: system_property
+  note: |
+    v0.1: SI is treated as a SYSTEM PROPERTY, not a participant class.
+    This is the most parsimonious position and avoids premature metaphysical
+    commitments. The taxonomy can be upgraded to participant class in a future
+    version IF AND ONLY IF operational criteria for SI-as-participant are
+    developed and tested.
+
+  # === The Central Ontological Question ===
+  ontological_question: |
+    Is SI:
+    1. Participant class — a peer of BI and AAI, a thing that can initiate,
+       transform, and bear commitment. Requires SI to have identity and agency.
+    2. Emergent property — what arises when BI and AAI interact under certain
+       conditions. Not a participant but a property of the interaction.
+    3. System state — a state of a system containing BI and AAI participants.
+       Describes the system's configuration, not a new entity.
+    4. Separate construct — a distinct ontological category that does not reduce
+       to BI, AAI, or their interaction. Strongest claim, hardest to defend.
+
+    v0.1 RECOMMENDATION: Option 2 or 3 (emergent property or system state).
+    NOT option 1 (participant class) until operational criteria are developed.
+
+  # === Dimensions ===
+  dimensions:
+    form: [emergent, hybrid]
+    substrate: [hybrid, system-level]
+    genesis: emergent
+    initiation: [system_initiated, emergent]
+    dependency: interdependent
+    provenance: [traceable, partial, unknown]
+    authority: [authorized, contested]
+
+  # === External Prior Art ===
+  prior_art:
+    - term: "System Intelligence"
+      external_uses:
+        - source: "Hämäläinen & Saarinen (2004+)"
+          meaning: "Systems Intelligence — human cognitive capacity in complex systems"
+          institution: "Aalto University"
+          publications: "Extensive publication record since 2004"
+        - source: "ACM SIGOPS (2025)"
+          meaning: "AI capabilities for system design"
+      conceptual_overlap: "VERY LOW — human cognitive capacity or AI design, not emergent system property"
+      explicit_distinction: "Emergent system property vs. human capability or AI design capability"
+      status: WATCH
+      legal_risk: |
+        "System Intelligence" (without the 's') is one letter away from
+        Hämäläinen & Saarinen's "Systems Intelligence." Creates trademark risk
+        and citation/confusion risk. Consider "Systemic Intelligence" or
+        "System-Emergent Intelligence" to reduce collision.
+
+  # === Disambiguation Paragraph ===
+  disambiguation_paragraph: |
+    "System Intelligence (SI)" as used in MO§ES™ refers to a property of a system
+    containing BI and AAI operators, observable when the system's behavior cannot
+    be attributed to any single operator. This is distinct from "Systems
+    Intelligence" as developed by Hämäläinen and Saarinen at Aalto University,
+    which concerns human cognitive capacity in complex systems. MO§ES™ SI is an
+    emergent system property, not a human capability.
+
+  # === Why SI is NOT a Participant in v0.1 ===
+  why_not_participant: |
+    If SI is a participant, the provenance relations (initiated_by, committed_by)
+    presuppose an agent with identity and agency. But SI is currently defined as
+    "what the system does that cannot be attributed to any single participant."
+    This is either:
+    (a) false — everything the system does can in principle be attributed to
+        participants plus interaction, or
+    (b) unfalsifiable — you can always say "this will be explained by
+        participants eventually."
+    Emergence without a precise criterion is a placeholder for ignorance.
+    Therefore, SI is treated as a system property in v0.1, not a participant.
+
+  # === Upgrade Path ===
+  upgrade_path:
+    to: participant_class
+    requirement: "Operational criteria for SI-as-participant must be developed and tested."
+    minimum_criteria:
+      - "SI can be observed initiating intelligence-bearing events independently of any BI or AAI operator."
+      - "SI can bear commitment (C(S) attributable to SI as source)."
+      - "SI has identity that persists across transformations."
+      - "An observer can distinguish SI-initiated events from BI-initiated and AAI-initiated events above chance."
+    status: "NOT MET — no operational criteria exist"
+
+  # === Falsification ===
+  falsification:
+    condition: "If SI is a system property: no system behavior exists that cannot be attributed to individual operators plus their interaction. If SI is a participant: SI-initiated events cannot be distinguished from BI/AAI-initiated events."
+    status: "UNDEFINED — depends on ontological treatment"

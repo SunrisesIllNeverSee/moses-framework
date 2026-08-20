@@ -1,0 +1,43 @@
+standard:
+  name: moses-canonical-framework
+  version: "0.1.0"
+
+repo:
+  name: moses-framework
+  type: canonical
+  lifecycle: active
+  repo_id: moses_framework
+  family: moses
+  purpose: Canonical framework repository for MO§ES™ — ontology, provenance, claims, prior-art, and measurement infrastructure.
+
+structure:
+  profile: canonical
+  allowed_root_dirs: [intellectual-provenance, ontology, commitment-theory, intelligence, intelligence-provenance, measurement, prior-art, claims, enterprise]
+  document_roots: [.]
+  artifact_roots: []
+  archive_roots: [archive]
+
+governance:
+  owner: "Deric J. McHenry / Ello Cello LLC"
+  canonical_changes_require_owner_approval: true
+  claims_discipline: true
+  prior_art_discipline: true
+  proprietary_layer_excluded: true
+  patent: "Serial No. 63/877,177 (Provisional)"
+
+naming:
+  forbid_version_suffixes: true
+  forbidden_suffixes: [_final, _final2, _new, _updated, _revised, _copy]
+  forbidden_terms: ["McHenry's Law", "CCT", "MO§E§"]
+  canonical_rendering: "MO§ES™"
+
+ip_boundaries:
+  public: "Conservation Law, Commitment Theory, ontology, claims, prior-art, measurement (CC BY 4.0)"
+  proprietary: "MO§ES™ core (SCS, S³, Mediator, SigEconomy) — never exposed here"
+  patent_covered: "MO§ES™ enforcement architecture (Serial No. 63/877,177)"
+
+versioning:
+  ontology_version: "0.1.0"
+  versioning_scheme: "semantic"
+  breaking_changes_require_major_bump: true
+  claim_status_changes_versioned: true

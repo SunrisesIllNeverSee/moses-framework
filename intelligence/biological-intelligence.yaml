@@ -1,0 +1,66 @@
+# Biological Intelligence (BI)
+# BI = B(I) — intelligence initiated endogenously by a biological system
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "CIVITAE ontology (signomy.xyz, March 20, 2026); ontology review v0.1"
+governance: "Provisional — HYPOTHESIS. Operational criteria not yet tested."
+
+biological_intelligence:
+  symbol: "BI"
+  formula: "BI = B(I)"
+  description: "Intelligence-bearing events initiated endogenously by a biological system."
+  operational_proxy: "Events with no detectable external triggering stimulus."
+  status: HYPOTHESIS
+
+  # === Dimensions (from intelligence.yaml) ===
+  dimensions:
+    form: [linguistic, neural, hybrid]
+    substrate: biological
+    genesis: evolutionary
+    initiation: endogenous
+    dependency: independent
+    provenance: traceable
+    authority: [authorized, unauthorized, contested]
+
+  # === Existing Priority ===
+  existing_priority:
+    source: "CIVITAE ontology"
+    date: "2026-03-20"
+    definition: "BI (Biological Intelligence) — human-side, operating directly"
+    first_known_internal_usage: "2026-03-20"
+    first_known_public_disclosure: "signomy.xyz (CIVITAE)"
+
+  # === Known Limitations ===
+  known_limitations:
+    - "Endogenous initiation vs. stimulus-response is an unresolved problem in neuroscience and philosophy of action."
+    - "The operational proxy (no detectable external triggering stimulus) is a negative criterion — it defines BI by absence, not presence."
+    - "Even humans are partially 'AAI' — we respond to external stimuli, our behavior is shaped by training data (culture, education), and our 'endogenous initiation' is influenced by external conditions."
+    - "The hard problem of volition: what counts as 'endogenous' is itself contested."
+
+  # === External Prior Art ===
+  prior_art:
+    - term: "Biological Intelligence"
+      external_uses:
+        - "Zenodo (2024, taxonomy classification)"
+        - "arXiv (2021, comparative AI/biology)"
+        - "Nature (2025, 2024, cognitive science)"
+      conceptual_overlap: "LOW-MODERATE — used as a term but not in a BI/AAI/SI taxonomy with initiation dependency"
+      explicit_distinction: "Part of initiation-dependency taxonomy, not standalone biological cognition"
+      status: DEFINE
+
+  # === Disambiguation ===
+  disambiguation: |
+    BI in MO§ES™ means intelligence-bearing events initiated endogenously by a
+    biological system. It is NOT:
+    - General biological cognition (broader)
+    - Human intelligence (narrower — BI includes any biological system)
+    - A claim about consciousness or qualia
+    BI is operationally defined via the initiation dimension (endogenous vs.
+    externally initiated). The distinction is provisional and must be
+    stress-tested.
+
+  # === Falsification ===
+  falsification:
+    condition: "An observer cannot distinguish BI from AAI events above chance."
+    status: "UNDEFINED — no operational test exists yet"
+    minimum_requirement: "Define behavioral markers of self-initiation and test whether observers can classify events above chance."

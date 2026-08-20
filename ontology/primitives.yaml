@@ -1,0 +1,193 @@
+# Canonical Ontology v0.1 — Primitives
+# The minimal set of entity types. Start small. Classify rather than endlessly create nouns.
+# Status: v0.1 — PROPOSAL pending owner freeze
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Derived from P-000 prospectus (10.5281/zenodo.20031715) and Conservation Law paper (10.5281/zenodo.20029607)"
+governance: "Owner must freeze before adding further vocabulary. Minimum viable set first."
+
+# ============================================================================
+# PRIMITIVE ONTOLOGY — the minimum viable set
+# ============================================================================
+# Design principle: freeze this small set before adding further vocabulary.
+# Every new concept either slots into one of these primitives or gets rejected.
+# ============================================================================
+
+primitives:
+
+  # === Existing Commitment Theory primitives (DEFINED — from P-000) ===
+
+  signal:
+    id: mos:Signal
+    description: |
+      A structured sequence of symbols drawn from an alphabet, carrying information
+      and capable of bearing deontic content. Signals include natural language text,
+      code, structured data, and multimodal representations.
+    symbol: "S"
+    defined_in: "P-000 Proposition 1.1; v05 paper Section 2.1"
+    source: "10.5281/zenodo.20031715"
+    status: DEFINED
+    note: "Used rather than 'text' or 'utterance' to frame language as an information-theoretic object subject to transformation, compression, and measurement — a deliberate positioning within the Shannon tradition."
+
+  state:
+    id: mos:State
+    description: "A configuration of a system at a point in time."
+    symbol: "S_t"
+    status: DEFINED
+    note: "Used in Micro Eval as initial state (S_t) and resulting state (S_{t+1})."
+
+  commitment:
+    id: mos:Commitment
+    description: |
+      The minimal identity-preserving deontic invariant of a signal — the set of
+      obligations, prohibitions, permissions, and modal constraints that must
+      survive transformation for the signal to be considered semantically
+      continuous with its source.
+    symbol: "C(S)"
+    defined_in: "P-000 Proposition 1.3; v05 paper Definition 2.4"
+    source: "10.5281/zenodo.20031715"
+    status: DEFINED
+    note: |
+      Property of signals, NOT agents. Deontic content (obligations, prohibitions,
+      permissions). Operationally defined and measurable via independent oracles.
+      The kernel is not a summary; it is the irreducible core of operative meaning.
+      NOT speaker belief, NOT a paraphrase, NOT an embedding, NOT a semantic
+      similarity score.
+
+  commitment_kernel:
+    id: mos:CommitmentKernel
+    description: "Synonym for commitment C(S) — the irreducible deontic invariant."
+    symbol: "C(S)"
+    defined_in: "P-000 Proposition 1.3; Nine_Novel_Concepts.md"
+    source: "10.5281/zenodo.20031715"
+    status: DEFINED
+    note: "Zero-collision verified April 15, 2026 across Google Scholar, Scopus, arXiv, ACL Anthology, PhilPapers, SSRN, IEEE Xplore."
+
+  transformation:
+    id: mos:Transformation
+    description: |
+      A function T: S → S that maps a signal to a modified signal. Transformations
+      may be lossy (compression, summarization, paraphrasing) or lossless
+      (reordering, synonym substitution), and may be performed by humans,
+      algorithms, or hybrid systems.
+    symbol: "T"
+    defined_in: "P-000 Proposition 1.2; v05 paper Section 2.1"
+    source: "10.5281/zenodo.20031715"
+    status: DEFINED
+    variants:
+      governed:
+        description: "A transformation that passes through constitutional constraints designed to preserve the commitment kernel."
+        defined_in: "P-000 Proposition 1.4"
+        symbol: "T_gov"
+        status: DEFINED
+        note: "Novel term — zero-collision. NOT supervised learning, NOT regulated AI, NOT human oversight, NOT Constitutional AI."
+      ungoverned:
+        description: "A transformation that lacks constitutional constraints. Subject to semantic entropy and commitment decay."
+        defined_in: "P-000 Proposition 1.5"
+        symbol: "T"
+        status: DEFINED
+        note: "Novel term — zero-collision. NOT unsupervised learning, NOT unregulated AI."
+
+  lineage:
+    id: mos:Lineage
+    description: "Ordered transformation history linking a signal to its source."
+    defined_in: "v05 paper Definition 2.9"
+    source: "10.5281/zenodo.20029607"
+    status: DEFINED
+
+  provenance:
+    id: mos:Provenance
+    description: "The traceable origin and transformation history of an entity through a graph of relationships."
+    status: DEFINED
+    note: "General concept. Intelligence Provenance is a specialized extension (see /intelligence-provenance)."
+
+  intelligence:
+    id: mos:Intelligence
+    description: |
+      The superclass of intelligence types. Operationally defined via observable
+      intelligence-bearing events, NOT via a metaphysical definition of what
+      intelligence "is." The framework does not claim to solve the hard problem
+      of intelligence.
+    symbol: "I"
+    status: HYPOTHESIS
+    note: |
+      Provisional. The framework treats intelligence operationally (observable
+      events) rather than metaphysically. Subtypes: BI, AAI, SI.
+      See /intelligence/ for the full taxonomy.
+    dimensions:
+      - form
+      - substrate
+      - genesis
+      - initiation
+      - dependency
+      - provenance
+      - authority
+
+  operator:
+    id: mos:Operator
+    description: "An entity that can initiate, transform, or receive signals. Synonymous with participant in v0.1."
+    synonyms: [participant, agent]
+    status: HYPOTHESIS
+    note: |
+      Subtypes: biological (BI) and assisted (AAI). SI is NOT an operator subtype
+      in v0.1 — it is treated as a system property. See /intelligence/.
+      Existing CIVITAE priority: agents are classified as AAI or BI.
+
+  system:
+    id: mos:System
+    description: "A collection of operators, signals, and transformations operating under a governance regime."
+    status: DEFINED
+    note: "In CIVITAE, a System is an LLM-backed model provider. In the broader ontology, a system is any configured collection that can exhibit system-level properties (including SI)."
+
+  authority:
+    id: mos:Authority
+    description: "The right to enforce a transformation, granted by a governance process."
+    status: DEFINED
+    note: "Authority is a governance property, NOT an intelligence property. In CIVITAE, Operators grant or confirm authority."
+
+  commitment_event:
+    id: mos:CommitmentEvent
+    description: "An observable event in which a participant initiates, transforms, or contributes to a commitment-bearing signal."
+    status: HYPOTHESIS
+    note: "Operational unit for Intelligence Provenance. Replaces 'intelligence' as the traced object when needed."
+
+  outcome:
+    id: mos:Outcome
+    description: "A measurable result of a transformation or event."
+    symbol: "O"
+    status: DEFINED
+
+  observation:
+    id: mos:Observation
+    description: "A measurement of a state, event, or outcome."
+    status: DEFINED
+
+  extractor:
+    id: mos:Extractor
+    description: "An instrument that computes C(S) from a signal S."
+    status: DEFINED
+    note: |
+      The choice of extractor is empirical/design, not definitional. Different
+      extractors produce different commitment objects. The framework is
+      parameterized by the extractor — critics may substitute their own.
+      The harness extractor is a modal-pattern sieve plus NLI model (proxy).
+
+  oracle:
+    id: mos:Oracle
+    description: "An independent instrument that verifies whether C(T(S)) = C(S) via bidirectional entailment or equivalent semantic verification."
+    status: DEFINED
+    note: "The equivalence relation ~ is defined by the oracle. The framework is parameterized by ~ — critics may substitute stronger oracles."
+
+# ============================================================================
+# WHAT IS NOT IN v0.1
+# ============================================================================
+# The following are explicitly excluded from the primitive set until
+# operational criteria are developed and tested:
+#
+# - SI as a participant class (treated as system property, not participant)
+# - Metaphysical definition of intelligence (treated operationally)
+# - Consciousness, qualia, subjective experience
+# - Volition, free will, agency as primitives
+# - Specific intelligence measurement instruments (those go in /measurement)
+# - Enterprise-specific constructs (those go in /enterprise)
+# ============================================================================

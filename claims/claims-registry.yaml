@@ -1,0 +1,326 @@
+# Claims Registry v0.1
+# Every substantive claim receives exactly one state.
+# Do not allow definitions, empirical observations, hypotheses, and laws to blur together.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "P-000 (10.5281/zenodo.20031715); v05 paper (10.5281/zenodo.20029607); ontology review v0.1"
+governance: "Owner must freeze. Claim status changes require new evidence and version bump."
+
+# ============================================================================
+# CLAIM STATE VOCABULARY
+# ============================================================================
+claim_states:
+  DEFINED: "A definitional or framing claim that is true by construction (not empirical)"
+  DERIVED: "A claim that follows logically/mathematically from definitions"
+  OBSERVED: "A claim supported by empirical observation but not yet replicated or tested at scale"
+  SUPPORTED: "A claim supported by replicated or scaled empirical evidence"
+  HYPOTHESIS: "A testable claim not yet supported by sufficient evidence"
+  SPECULATIVE: "A claim that is not yet testable or lacks operational definition"
+  EXTERNAL: "A claim sourced from external literature, not originating in this framework"
+
+# ============================================================================
+# CLAIMS
+# ============================================================================
+
+claims:
+
+  # === Commitment Theory — existing claims ===
+
+  CT-001:
+    statement: "Commitment C(S) is the minimal identity-preserving deontic invariant of a signal."
+    status: DEFINED
+    scope: "Signals with a definable commitment kernel."
+    evidence: "Definition 2.4, v05 paper; P-000 Proposition 1.3; Naming_Architecture.md"
+    falsification: "N/A — definitional. But the choice of extractor is empirical."
+    source: "10.5281/zenodo.20031715"
+    owner: "Deric J. McHenry"
+    review: "Canonical — do not modify without owner approval."
+
+  CT-002:
+    statement: "C(T_gov(S)) = C(S) — commitment is conserved under governed transformation."
+    status: OBSERVED
+    scope: "Text, code, proofs. 100 sentences, 50 code snippets, 25 proofs. EXP-001 through EXP-007."
+    evidence: "3,950 run entries. 0.94 vs 0.42 stability separation. DOI: 10.5281/zenodo.19105225"
+    falsification: "F_10(S) < tau for non-trivial fraction of samples under enforced regime."
+    source: "10.5281/zenodo.20029607"
+    owner: "Deric J. McHenry"
+    review: "Canonical — supported by existing experiments but limited corpus. Upgrade to SUPPORTED pending large-scale replication (>10,000 samples) and cross-model replication."
+
+  CT-003:
+    statement: "C(T(S)) < C(S) without enforcement — commitment degrades under ungoverned transformation."
+    status: OBSERVED
+    scope: "Same as CT-002."
+    evidence: "EXP-001 through EXP-007. Drift at n >= 3, consistent at n >= 5."
+    falsification: "Ungoverned transformation preserves commitment at F_10(S) >= tau for non-trivial fraction."
+    source: "10.5281/zenodo.20029607"
+    owner: "Deric J. McHenry"
+    review: "Canonical."
+
+  CT-004:
+    statement: "The conservation law is falsifiable."
+    status: DEFINED
+    scope: "The protocol is defined; the result is empirical."
+    evidence: "v05 paper Section 4."
+    falsification: "N/A."
+    source: "10.5281/zenodo.20029607"
+    owner: "Deric J. McHenry"
+    review: "Canonical."
+
+  CT-005:
+    statement: "MO§ES™ enforces commitment conservation via compression gating, lineage tracking, and hardware anchoring."
+    status: DEFINED
+    scope: "Public-layer specification only."
+    evidence: "v05 paper Section 8. Patent Serial No. 63/877,177."
+    falsification: "N/A."
+    source: "10.5281/zenodo.20029607"
+    owner: "Deric J. McHenry"
+    review: "Canonical — proprietary details excluded."
+
+  CT-006:
+    statement: "The harness is a proxy measurement tool, not the production enforcement implementation."
+    status: DEFINED
+    scope: "Public harness."
+    evidence: "CLAUDE.md (commitment-conservation repo)."
+    falsification: "N/A."
+    source: "Local repository governance."
+    owner: "Deric J. McHenry"
+    review: "Canonical governance rule."
+
+  CT-007:
+    statement: "Commitment is a property of signals, not agents."
+    status: DEFINED
+    scope: "CT's core ontological commitment."
+    evidence: "P-000 Proposition 2.1; Disambiguation_Guide.md."
+    falsification: "N/A — definitional."
+    source: "10.5281/zenodo.20031715"
+    owner: "Deric J. McHenry"
+    review: "Canonical — distinguishes CT from Brandom, Walton & Krabbe, CommitmentBank."
+
+  CT-008:
+    statement: "The nine novel concepts of CT occupy clean conceptual territory with zero search results as of April 15, 2026."
+    status: SUPPORTED
+    scope: "Searched corpus: Google Scholar, Scopus, arXiv, ACL Anthology, PhilPapers, SSRN, IEEE Xplore."
+    evidence: "Nine_Novel_Concepts.md; Naming_Architecture.md."
+    falsification: "A prior use of any of the nine terms in the specified sense is discovered."
+    source: "10.5281/zenodo.20031715"
+    owner: "Deric J. McHenry"
+    review: "Supported in the searched corpus. Must use 'in the searched corpus' qualifier."
+
+  CT-009:
+    statement: "Semantic entropy is irreversible without external governance."
+    status: OBSERVED
+    scope: "Ungoverned transformation."
+    evidence: "P-000 Proposition 6.3; EXP-001 through EXP-007."
+    falsification: "Commitment is recovered by further ungoverned transformation without re-anchoring."
+    source: "10.5281/zenodo.20031715"
+    owner: "Deric J. McHenry"
+    review: "Canonical."
+
+  CT-010:
+    statement: "The conservation law is substrate independent."
+    status: DEFINED
+    scope: "The law describes a property of the signal and transformation constraints, not of any particular model architecture."
+    evidence: "P-000 Proposition 5.4."
+    falsification: "N/A — definitional property."
+    source: "10.5281/zenodo.20031715"
+    owner: "Deric J. McHenry"
+    review: "Canonical."
+
+  # === Intelligence taxonomy — provisional claims ===
+
+  INT-001:
+    statement: "Intelligence-bearing events can be classified as BI (endogenously initiated) or AAI (requiring external initiation)."
+    status: HYPOTHESIS
+    scope: "Observable intelligence-bearing events."
+    evidence: "None — no operational test exists."
+    falsification: "An observer cannot distinguish BI from AAI events above chance."
+    source: "Proposed in ontology review v0.1."
+    owner: "Deric J. McHenry"
+    review: "Provisional — requires operational criteria and testing."
+
+  INT-002:
+    statement: "AAI is distinct from 'assisted intelligence' as used in FedTech/AMA/Forbes/PwC."
+    status: EXTERNAL
+    scope: "Terminology disambiguation."
+    evidence: "Prior-art search — multiple external uses with different meaning."
+    falsification: "N/A."
+    source: "Prior-art search (ontology review v0.1)."
+    owner: "Deric J. McHenry"
+    review: "Disambiguation required in any public use of AAI."
+
+  INT-003:
+    statement: "BI × AAI → SI — biological intelligence combined with assisted intelligence produces system intelligence."
+    status: SPECULATIVE
+    scope: "System-level intelligence emergence."
+    evidence: "None."
+    falsification: "UNDEFINED — the × operation is not specified."
+    source: "Proposed by user."
+    owner: "Deric J. McHenry"
+    review: "Cannot be upgraded until × is defined and falsification condition specified."
+
+  INT-004:
+    statement: "SI is a system property, not a participant class (v0.1 treatment)."
+    status: DEFINED
+    scope: "Ontology v0.1 design decision."
+    evidence: "Parsimony."
+    falsification: "N/A — design decision."
+    source: "Ontology review v0.1."
+    owner: "Deric J. McHenry"
+    review: "Design recommendation. May be upgraded to participant class if operational criteria are developed."
+
+  INT-005:
+    statement: "Initiation dependency is the criterion distinguishing BI from AAI."
+    status: HYPOTHESIS
+    scope: "Intelligence taxonomy."
+    evidence: "Conceptual analysis. Related: endogenous/exogenous action (neuroscience)."
+    falsification: "Initiation dependency cannot be operationally detected, or does not distinguish BI from AAI above chance."
+    source: "Proposed by user; formalized in ontology review v0.1."
+    owner: "Deric J. McHenry"
+    review: "Provisional. Inherits the hard problem of endogenous initiation vs. stimulus-response."
+
+  INT-006:
+    statement: "AAI cannot independently spark intelligence — it requires an originating external condition."
+    status: HYPOTHESIS
+    scope: "Initiation dependency of AAI."
+    evidence: "None — this is a stronger claim than INT-001 and should not be quietly smuggled in as fact."
+    falsification: "An AAI system initiates intelligence-bearing events without any external triggering condition."
+    source: "User proposal."
+    owner: "Deric J. McHenry"
+    review: "MUCH STRONGER than INT-001. Do not present as fact. Requires careful empirical treatment."
+
+  # === Intelligence Provenance — provisional claims ===
+
+  IP-001:
+    statement: "Intelligence Provenance traces intelligence-bearing events across BI, AAI, and system contexts."
+    status: HYPOTHESIS
+    scope: "Intelligence-bearing events."
+    evidence: "None — framework proposed but not implemented."
+    falsification: "A system with IP does not predict outcomes better than data provenance alone."
+    source: "Proposed by user."
+    owner: "Deric J. McHenry"
+    review: "Provisional."
+
+  IP-002:
+    statement: "Intelligence Provenance is distinct from data, content, semantic, reasoning, and decision provenance, authorship, and model attribution."
+    status: HYPOTHESIS
+    scope: "Provenance taxonomy."
+    evidence: "Conceptual analysis."
+    falsification: "An existing provenance system subsumes all IP relations."
+    source: "Ontology review v0.1."
+    owner: "Deric J. McHenry"
+    review: "Provisional — requires engagement with W3C PROV, C2PA. The key question: does IP trace anything that PROV cannot?"
+
+  IP-003:
+    statement: "The term 'intelligence provenance' is not found in the searched corpus in the specified sense."
+    status: EXTERNAL
+    scope: "Prior-art search result."
+    evidence: "Web searches. Closest: 'Lineage of Intelligence' (Zenodo 10.5281/zenodo.20006596), 'Provenance Not Kind' (suposystem.ai)."
+    falsification: "A prior use in the specified sense is discovered."
+    source: "Prior-art search (ontology review v0.1)."
+    owner: "Deric J. McHenry"
+    review: "Search result — not a claim about nonexistence. 'In the searched corpus' qualifier applies."
+
+  # === Connection claims ===
+
+  CONN-001:
+    statement: "Commitment C(S) can be traced across provenance edges as an invariant constraint."
+    status: HYPOTHESIS
+    scope: "Provenance graphs containing commitment-bearing signals."
+    evidence: "None — proposed but not implemented."
+    falsification: "Commitment cannot be computed at provenance nodes, or adds no constraint beyond data provenance."
+    source: "Ontology review v0.1."
+    owner: "Deric J. McHenry"
+    review: "Provisional — the formal bridge between CT and IP."
+
+  CONN-002:
+    statement: "Micro Evals can be derived from the ontology rather than acting as a parallel system."
+    status: HYPOTHESIS
+    scope: "Micro Eval measurement units."
+    evidence: "None — derivation proposed but not demonstrated."
+    falsification: "Micro Eval components cannot be mapped to ontology entities without remainder."
+    source: "Ontology review v0.1."
+    owner: "Deric J. McHenry"
+    review: "Provisional."
+
+  CONN-003:
+    statement: "What happens to a commitment when it is transferred between or transformed by different intelligences can be modeled as C(I_t) → T_{I_j} → C(I_{t+1})."
+    status: SPECULATIVE
+    scope: "Commitment × Intelligence ecology."
+    evidence: "None — not yet formalized."
+    falsification: "UNDEFINED — the model is not yet specified enough to falsify."
+    source: "User proposal (Layer 5)."
+    owner: "Deric J. McHenry"
+    review: "This is where the truly new ecology may emerge. Not yet formalized."
+
+  # === Prior-art claims ===
+
+  PA-001:
+    statement: "No prior art combines conservation law for deontic content + empirical validation + falsification protocol + public harness."
+    status: SUPPORTED
+    scope: "Searched corpus."
+    evidence: "COMPETITION_ANALYSIS.md + independent search. Closest: CoHSI, Marcolli, Kuhn."
+    falsification: "A framework combining all four is discovered."
+    source: "10.5281/zenodo.20029607; ontology review v0.1."
+    owner: "Deric J. McHenry"
+    review: "Supported in the searched corpus. Must use 'in the searched corpus' qualifier."
+
+  PA-002:
+    statement: "The BI/AAI/SI tripartite taxonomy with initiation dependency is not found in the searched corpus."
+    status: EXTERNAL
+    scope: "Searched corpus."
+    evidence: "Prior-art search. Closest: Tri-X model, endogenous/exogenous action."
+    falsification: "A prior BI/AAI/SI taxonomy with initiation dependency is discovered."
+    source: "Ontology review v0.1."
+    owner: "Deric J. McHenry"
+    review: "Search result — not a claim about nonexistence. 'In the searched corpus' qualifier applies."
+
+  PA-003:
+    statement: "The connection between commitment conservation and intelligence provenance (tracing a conserved invariant across provenance edges) is not found in the searched corpus."
+    status: EXTERNAL
+    scope: "Searched corpus."
+    evidence: "Prior-art search."
+    falsification: "A prior framework connecting conservation laws to provenance graphs is discovered."
+    source: "Ontology review v0.1."
+    owner: "Deric J. McHenry"
+    review: "Search result. This is the genuinely novel relational structure (Layer 5)."
+
+  # === Measurement claims ===
+
+  MEAS-001:
+    statement: "Micro Evals (E_μ) are measurement primitives that instantiate ontology entities in a measurement context."
+    status: DEFINED
+    scope: "Measurement framework."
+    evidence: "Derivation from ontology v0.1."
+    falsification: "N/A — design decision."
+    source: "Ontology review v0.1."
+    owner: "Deric J. McHenry"
+    review: "Design decision. Micro Evals derive from ontology, not parallel to it."
+
+  MEAS-002:
+    statement: "Micro Eval-derived benchmarks predict outcomes better than standard evaluation metrics."
+    status: HYPOTHESIS
+    scope: "Evaluation comparison."
+    evidence: "None — not yet tested."
+    falsification: "Micro Eval-derived benchmarks do not outperform standard metrics (accuracy, F1, BLEU)."
+    source: "Ontology review v0.1."
+    owner: "Deric J. McHenry"
+    review: "Provisional — requires empirical comparison."
+
+# ============================================================================
+# CLAIMS THAT ARE EXPLICITLY NOT MADE
+# ============================================================================
+# These are claims that might be attributed to the framework but are explicitly
+# NOT claimed. Listing them prevents misattribution.
+# ============================================================================
+
+not_claimed:
+  - "CT does not claim to have solved the hard problem of intelligence."
+  - "CT does not claim that conservation holds for all signal types (only deontic signals have been tested)."
+  - "CT does not claim that the harness is the production enforcement implementation."
+  - "CT does not claim that the NLI oracle is a valid equivalence relation (it may not be transitive)."
+  - "CT does not claim that the corpus is sufficient for the conservation claim to be considered established (it is proof-of-concept scale)."
+  - "The intelligence ontology does not claim that BI/AAI/SI are operationally distinguishable (no test exists yet)."
+  - "The intelligence ontology does not claim that SI is a participant class (v0.1 treats it as a system property)."
+  - "The intelligence ontology does not claim that BI × AAI → SI is established (the × operation is undefined)."
+  - "Intelligence Provenance does not claim to trace 'intelligence itself' — it traces intelligence-bearing events."
+  - "The framework does not claim personal name attribution ('McHenry's Law' is prohibited by the owner)."

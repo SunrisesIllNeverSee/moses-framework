@@ -1,0 +1,104 @@
+# Evidence Grades — Grading Scheme for Empirical Evidence
+# Maps to the 7-state claims vocabulary but provides finer granularity for
+# empirical evidence assessment.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1"
+governance: "Provisional."
+
+evidence_grades:
+  description: |
+    Evidence grades provide finer granularity than the 7-state claims vocabulary
+    for assessing empirical evidence. A claim's state (OBSERVED, SUPPORTED, etc.)
+    is determined by its evidence grade.
+
+  # === Grade Scale ===
+  grades:
+
+    - grade: "E0"
+      label: "No evidence"
+      description: "The claim has no empirical evidence. It is DEFINED, SPECULATIVE, or EXTERNAL."
+      maps_to_state: [DEFINED, SPECULATIVE, EXTERNAL]
+
+    - grade: "E1"
+      label: "Proof of concept"
+      description: "Single experiment, small corpus, no replication. Sufficient to show the claim is not obviously false."
+      maps_to_state: [OBSERVED]
+      example: "EXP-001 through EXP-007: 3,950 runs, 57 signals. Proof of concept for conservation law."
+
+    - grade: "E2"
+      label: "Replicated"
+      description: "Multiple experiments or runs with consistent results. Corpus still limited."
+      maps_to_state: [OBSERVED]
+      example: "EXP-003 through EXP-007 all show conservation under governed conditions."
+
+    - grade: "E3"
+      label: "Scaled"
+      description: "Large-scale evidence (>10,000 samples) with consistent results."
+      maps_to_state: [SUPPORTED]
+      example: "Not yet achieved for any CT claim. Required to upgrade LAW-1 from OBSERVED to SUPPORTED."
+
+    - grade: "E4"
+      label: "Cross-validated"
+      description: "Evidence replicated by independent parties using different oracles, corpora, and systems."
+      maps_to_state: [SUPPORTED]
+      example: "Not yet achieved. Requires cross-model replication (Claude, Llama, GPT-4) and third-party replication."
+
+    - grade: "E5"
+      label: "Established"
+      description: "Multiple independent replications at scale, with adversarial testing. The claim is considered established within the framework."
+      maps_to_state: [SUPPORTED]
+      example: "Not yet achieved for any CT claim."
+
+  # === Current Evidence Status ===
+  current_status:
+    LAW-1_conservation:
+      claim: "C(T_gov(S)) = C(S)"
+      current_grade: E2
+      current_state: OBSERVED
+      upgrade_requirement: "E3 (scaled, >10,000 samples) + E4 (cross-validated, independent replication)"
+      notes: "3,950 runs, 57 signals. Consistent across EXP-001 through EXP-007. Corpus is proof-of-concept scale."
+
+    LAW-2_semantic_entropy:
+      claim: "C(T(S)) < C(S) for ungoverned T"
+      current_grade: E2
+      current_state: OBSERVED
+      upgrade_requirement: "E3 + E4"
+      notes: "Consistent degradation observed across experiments. Same corpus limitations as LAW-1."
+
+    PROP-3.2_failure_modes:
+      claim: "Nine characteristic failure modes under ungoverned transformation"
+      current_grade: E2
+      current_state: OBSERVED
+      upgrade_requirement: "E3 (scaled testing to confirm all nine modes replicate at scale)"
+      notes: "All nine modes observed in experiments. Taxonomy is a novel contribution."
+
+    INT-001_BI_AAI_separable:
+      claim: "BI/AAI are operationally separable"
+      current_grade: E0
+      current_state: HYPOTHESIS
+      upgrade_requirement: "E1 (any operational test showing above-chance classification)"
+      notes: "No operational test exists yet."
+
+    IP-001_provenance_predictive:
+      claim: "Intelligence Provenance adds explanatory power"
+      current_grade: E0
+      current_state: HYPOTHESIS
+      upgrade_requirement: "E1 (any comparison showing IP predicts outcomes better than data provenance alone)"
+      notes: "Not yet implemented or tested."
+
+  # === Proxy Measurement Acknowledgment ===
+  proxy_acknowledgment: |
+    All evidence grades are based on PROXY measurements:
+    - The commitment extractor is a modal-pattern sieve + NLI model (proxy for C(S))
+    - The oracle is bidirectional NLI at threshold (proxy for equivalence ~)
+    - The corpus is small (proxy for the population of signals)
+
+    Proxy measurements are sufficient for E1-E2 (proof of concept, replicated).
+    E3-E5 require either:
+    (a) stronger proxies (better extractors, better oracles), or
+    (b) evidence that conservation holds across multiple independent proxies.
+
+    The framework is parameterized by the oracle — critics may substitute
+    their own. If conservation holds across multiple independent oracles,
+    the law is supported at higher grades.

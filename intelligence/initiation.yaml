@@ -1,0 +1,99 @@
+# Initiation — The Taxonomic Criterion Distinguishing BI from AAI
+# Initiation is a point event (temporal), not a structural relationship.
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "Ontology review v0.1; user proposal (Layer 3)"
+governance: "Provisional — HYPOTHESIS. Must be distinguished from causation, prompting, control, and dependency."
+
+initiation:
+  definition: "The event that brings an intelligence-bearing event into existence."
+  status: DEFINED
+  note: |
+    Initiation is a POINT EVENT (temporal), not a structural relationship.
+    It marks the moment an intelligence-bearing event begins.
+    This is the taxonomic criterion distinguishing BI (endogenous initiation)
+    from AAI (externally initiated).
+
+  # === Initiation Types ===
+  types:
+    endogenous:
+      description: "Initiated from within the biological system itself, with no detectable external triggering stimulus."
+      corresponds_to: BI
+      operational_proxy: "Events with no detectable external triggering stimulus."
+      known_limitation: "Endogenous initiation vs. stimulus-response is an unresolved problem in neuroscience."
+
+    externally_initiated:
+      description: "Requires an originating external condition/event/intelligence to initiate."
+      corresponds_to: AAI
+      operational_proxy: "Events that do not occur without a detectable external triggering stimulus."
+      known_limitation: "Must be distinguished from simple stimulus-response."
+
+    machine_initiated:
+      description: "Initiated by another machine intelligence (AAI initiating AAI)."
+      corresponds_to: AAI (chain)
+      example: "An automated pipeline triggering an LLM call"
+      note: "Machine-initiated machine intelligence. The originating condition is another AAI's output."
+
+    system_initiated:
+      description: "Initiated by the system as a whole, not attributable to any single operator."
+      corresponds_to: SI (if SI is treated as having initiation capacity)
+      note: "PROVISIONAL — SI is treated as a system property in v0.1, not a participant. System initiation is therefore not a first-class initiation type in v0.1."
+
+    recursive:
+      description: "An operation that initiates itself based on prior output."
+      corresponds_to: AAI (recursive)
+      example: "Recursive summarization pipeline"
+      note: "The originating condition is the operation's own prior state."
+
+  # === Distinctions from Adjacent Concepts ===
+  distinctions:
+    vs_causation:
+      description: "Causation is broader than initiation. A cause can sustain, enable, or prevent. Initiation is the specific point event that brings an intelligence-bearing event into existence."
+      example: "A power supply causes an LLM to operate, but does not initiate its intelligence-bearing event. A prompt initiates it."
+
+    vs_prompting:
+      description: "Prompting is a subset of initiation. All prompts initiate, but not all initiations are prompts."
+      example: "A sensor reading can initiate an autonomous response without being a 'prompt' in the linguistic sense."
+
+    vs_control:
+      description: "Control implies ongoing influence. Initiation is a point event — it happens once, at the start."
+      example: "A human controls an ongoing process by continuous feedback. The human initiated the process, but control is the ongoing relationship, not the initiation."
+
+    vs_dependency:
+      description: "Dependency is structural — A depends on B if A cannot exist without B. Initiation is temporal — it marks when an event begins."
+      example: "An LLM depends on its training data (structural dependency) but is initiated by a prompt (temporal initiation)."
+
+  # === The Hard Problem ===
+  hard_problem: |
+    Endogenous initiation vs. stimulus-driven response is an unresolved problem
+    in neuroscience and philosophy of action. The endogenous/exogenous action
+    literature (precursor processes of self-initiated action, the role of
+    endogenous input in defining self-generated action) addresses this but does
+    not solve it. The BI/AAI distinction inherits this unsolved problem.
+
+    Recommendation: Define BI and AAI operationally via observable initiation
+    patterns (presence/absence of detectable external trigger), not via
+    metaphysical claims about volition. Accept that this is a proxy measurement
+    with known limitations, analogous to the commitment extractor's proxy
+    measurement of semantic content.
+
+  # === Initiation Chain Model ===
+  chain_model:
+    description: |
+      Intelligence operations can chain. A BI operator initiates an AAI operation,
+      which in turn initiates another AAI operation. The assistance concerns the
+      ORIGINATING CONDITION required to instantiate that intelligent operation,
+      not the entire chain.
+    notation: "BI_1 → AAI_1 → AAI_2"
+    example: |
+      A human (BI_1) writes a prompt that initiates an LLM (AAI_1), which
+      generates output that initiates another LLM call (AAI_2). AAI_2 was not
+      "assisted by a human" in the FedTech/AMA sense. AAI_2 was initiated by
+      AAI_1's output. The originating condition for AAI_2 is AAI_1, not BI_1.
+    status: HYPOTHESIS
+
+  # === Falsification ===
+  falsification:
+    condition: "An observer cannot distinguish endogenous from externally-initiated events above chance."
+    status: "UNDEFINED — no operational test exists yet"
+    minimum_requirement: "Define behavioral markers of self-initiation and test whether observers can classify events above chance."

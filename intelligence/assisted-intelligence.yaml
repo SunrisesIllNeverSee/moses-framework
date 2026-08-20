@@ -1,0 +1,101 @@
+# Assisted Intelligence (AAI)
+# AAI = A_a(I) — intelligence requiring an originating external condition to initiate
+# CRITICAL: "Assisted" means initiation dependency, NOT "helps humans."
+version: "0.1.0"
+last_updated: "2026-08-20"
+canonical_source: "CIVITAE ontology (signomy.xyz, March 20, 2026); ontology review v0.1"
+governance: "Provisional — HYPOTHESIS. Disambiguation paragraph REQUIRED in every public document."
+
+assisted_intelligence:
+  symbol: "AAI"
+  formula: "AAI = A_a(I)"
+  description: "Intelligence-bearing events requiring an originating external condition/event/intelligence to initiate."
+  operational_proxy: "Events that do not occur without a detectable external triggering stimulus."
+  status: HYPOTHESIS
+
+  # === The Key Distinction ===
+  key_distinction: |
+    "Assisted Intelligence" does NOT mean "technology that assists humans."
+    The emerging definition concerns INITIATION DEPENDENCY: intelligent
+    operation requiring an originating external condition/event/intelligence
+    rather than endogenous initiation.
+
+    The assistance concerns the ORIGINATING CONDITION required to instantiate
+    that intelligent operation. An LLM generating text in response to a prompt
+    is AAI — it requires the prompt (external condition) to initiate. A human
+    deciding unprompted to write a letter is BI — endogenous initiation.
+
+    This distinction is provisional and must be stress-tested.
+
+  # === Dimensions ===
+  dimensions:
+    form: [linguistic, computational, hybrid]
+    substrate: [silicon, hybrid]
+    genesis: [engineered, emergent]
+    initiation: [externally_initiated, machine_initiated, recursive]
+    dependency: [dependent, interdependent]
+    provenance: [traceable, partial, unknown]
+    authority: [authorized, unauthorized, contested]
+
+  # === Initiation Subtypes ===
+  initiation_subtypes:
+    externally_initiated:
+      description: "Requires an external condition (prompt, stimulus, request) to begin operation."
+      example: "LLM responding to a prompt"
+    machine_initiated:
+      description: "Initiated by another machine intelligence (AAI initiating AAI)."
+      example: "An automated pipeline triggering an LLM call"
+      note: "Machine-initiated machine intelligence. The originating condition is another AAI's output."
+    recursive:
+      description: "An AAI operation that initiates itself based on prior output."
+      example: "Recursive summarization pipeline"
+      note: "The originating condition is the AAI's own prior state."
+
+  # === Existing Priority ===
+  existing_priority:
+    source: "CIVITAE ontology"
+    date: "2026-03-20"
+    definition: "AAI (AI Assisted Intelligence) — silicon-side, powered by a System"
+    first_known_internal_usage: "2026-03-20"
+    first_known_public_disclosure: "signomy.xyz (CIVITAE)"
+
+  # === External Prior Art — CRITICAL DISAMBIGUATION ===
+  prior_art:
+    - term: "Assisted Intelligence"
+      external_uses:
+        - source: "FedTech Magazine (2020)"
+          meaning: "AI that assists humans with simple tasks"
+        - source: "AMA CPT Appendix S (2021)"
+          meaning: "Assistive medical AI classification"
+        - source: "Forbes/Cognilytica (2020)"
+          meaning: "AI working in conjunction with people"
+        - source: "PwC (2018)"
+          meaning: "Assisted AI as business taxonomy category"
+      conceptual_overlap: "LOW — all external uses mean 'AI that assists humans'"
+      explicit_distinction: |
+        AAI in MO§ES™ means intelligence REQUIRING external initiation (initiation
+        dependency), NOT intelligence that assists humans. These are different
+        concepts. The external uses describe the PURPOSE of the AI (to assist).
+        MO§ES™ AAI describes the INITIATION MECHANISM (requires external trigger).
+      status: DEFINE
+      legal_risk: "Using AAI with a different meaning creates likelihood of confusion. Disambiguation paragraph required. Trademark registration may be prevented by existing uses."
+
+  # === Disambiguation Paragraph (for use in public documents) ===
+  disambiguation_paragraph: |
+    "Assisted Intelligence (AAI)" as used in MO§ES™ refers to intelligence-bearing
+    events that require an originating external condition to initiate — an
+    initiation-dependency criterion. This is distinct from "assisted intelligence"
+    as used in FedTech Magazine, the AMA CPT Appendix S, Forbes/Cognilytica, and
+    PwC, where the term denotes AI that assists humans with tasks. In MO§ES™, AAI
+    concerns how intelligence is initiated, not what it is used for.
+
+  # === Known Limitations ===
+  known_limitations:
+    - "Must be distinguished from simple stimulus-response. The 'intelligence' qualifier requires that the event produces a transformation, not merely a reaction."
+    - "Initiation dependency is a spectrum, not a binary. Most AI systems are partially initiated (they respond to prompts but also have internal state, timers, autonomous processes)."
+    - "The operational proxy (absence of initiation without stimulus) is a negative criterion."
+
+  # === Falsification ===
+  falsification:
+    condition: "An observer cannot distinguish AAI from BI events above chance, OR AAI events occur without any external triggering stimulus."
+    status: "UNDEFINED — no operational test exists yet"

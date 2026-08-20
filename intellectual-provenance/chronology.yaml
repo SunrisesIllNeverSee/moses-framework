@@ -1,0 +1,116 @@
+# Intellectual Provenance — Chronology
+# The sacred ledger. Every concept gets: first conception → first written record →
+# first public disclosure → subsequent evolution → related prior art discovered later.
+# Do not rewrite history to make the story prettier. The evolution itself is valuable.
+version: "0.1.0"
+last_updated: "2026-08-20"
+governance: "Owner-approved chronology. Additions append; corrections require provenance note."
+
+chronology:
+  - date: "2025-12"
+    event: "Earliest private conception of commitment conservation under transformation"
+    type: conception
+    record: "Private working notes (not yet located in archive — owner to confirm exact date)"
+    public: false
+    notes: "Origin of the idea that deontic content of signals persists under governed transformation"
+
+  - date: "2026-01-12"
+    event: "First public disclosure of Commitment Conservation concept"
+    type: public_disclosure
+    record: "Hugging Face model card — burnmydays/commitment_conservation_harness"
+    public: true
+    url: "https://huggingface.co/burnmydays/commitment_conservation_harness"
+    notes: "January 12, 2026 disclosure with subsequent January and February versions"
+
+  - date: "2026-01"
+    event: "Subsequent January versions of conservation formulation"
+    type: version_iteration
+    public: true
+    notes: "Iterative refinement of the conservation concept through January"
+
+  - date: "2026-02"
+    event: "February versions of conservation formulation"
+    type: version_iteration
+    public: true
+    notes: "Continued refinement before the April Commitment Theory formulation"
+
+  - date: "2026-03-20"
+    event: "CIVITAE ontology published with AAI/BI intelligence classification"
+    type: public_disclosure
+    record: "signomy.xyz — CIVITAE ONTOLOGY (agent-universe/ONTOLOGY.md)"
+    public: true
+    notes: "Established AAI (AI Assisted Intelligence — silicon-side) and BI (Biological Intelligence — human-side) as internal terminology. This is the existing priority for AAI/BI."
+
+  - date: "2026-04-14"
+    event: "Naming Architecture decision — CCT → CT rename"
+    type: internal_decision
+    record: "CT/workspace/naming-architecture/Naming_Architecture.md"
+    public: false
+    notes: "Resolved collision with Hobfoll's Conservation of Resources (COR) theory. 'Conservation' stays at law level, removed from theory name."
+
+  - date: "2026-04-15"
+    event: "Nine Novel Concepts verified zero-collision"
+    type: prior_art_search
+    record: "CT/workspace/naming-architecture/Nine_Novel_Concepts.md"
+    public: false
+    notes: "Databases searched: Google Scholar, Scopus, arXiv, ACL Anthology, PhilPapers, SSRN, IEEE Xplore"
+
+  - date: "2026-04-20"
+    event: "P-000 Propositions of Commitment Theory prospectus"
+    type: publication
+    record: "CT/papers/P-000_prospectus/"
+    public: true
+    doi: "10.5281/zenodo.20031715"
+    notes: "Generalization from Conservation Law → Commitment Theory. Established definitions, propositions, axioms, disambiguation, nine novel concepts."
+
+  - date: "2026-04"
+    event: "Conservation Law paper v05 published"
+    type: publication
+    record: "Commitment_Conservation/paper/"
+    public: true
+    doi: "10.5281/zenodo.20029607"
+    notes: "Full paper: conservation law, experiments, falsification protocol, MO§ES™ architecture (public layer)"
+
+  - date: "2026-04"
+    event: "Experimental record EXP-001 through EXP-007 deposited"
+    type: publication
+    record: "Commitment_Conservation/experiments/"
+    public: true
+    doi: "10.5281/zenodo.19105225"
+    notes: "3,950 runs, 57 signals, 181 condition-signal configurations. Nine failure modes catalogued."
+
+  - date: "2026-04"
+    event: "Transformation harness deposited"
+    type: publication
+    record: "Commitment_Conservation/harness/"
+    public: true
+    doi: "10.5281/zenodo.19109397"
+    notes: "Public falsification harness. Proxy measurement tool, not production enforcement."
+
+  - date: "2026-04"
+    event: "Concept DOI registered"
+    type: publication
+    public: true
+    doi: "10.5281/zenodo.18267278"
+    notes: "Concept-level DOI for the framework"
+
+  - date: "2026-04"
+    event: "Provisional patent filed"
+    type: filing
+    record: "U.S. Patent Serial No. 63/877,177 (Provisional)"
+    public: false
+    notes: "Covers MO§ES™ enforcement architecture, not the public law or theory"
+
+  - date: "2026-04"
+    event: "clawRxiv preprint of Conservation of Commitment paper"
+    type: publication
+    public: true
+    url: "https://www.clawrxiv.io/abs/2604.00832"
+    notes: "Public preprint — semantic extension of Shannon information theory framing"
+
+  - date: "2026-08-20"
+    event: "Canonical Framework Repository initiated — ontology v0.1"
+    type: repository_creation
+    record: "This repository"
+    public: false
+    notes: "Adversarial review completed. Canonical ontology v0.1 proposed. Intelligence extension (BI/AAI/SI, Intelligence Provenance) formalized as provisional claims."
