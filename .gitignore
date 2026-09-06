@@ -4,3 +4,7 @@ __pycache__/
 .venv/
 node_modules/
 *.zip
+
+# Skylos scan output
+skylos-sec.json
+.skylos/
